@@ -1,0 +1,28 @@
+{
+  "required": true,
+  "minVersion": "0.8.5",
+  "package": "com.fragmentation.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "fragmentation.refmap.json",
+  "mixins": [
+    "TaczBulletMixin",
+    "TaczKineticBulletMixin",
+    "ItemStackMixin",
+    "ItemMixin",
+    "LivingEntityMixin",
+    "DamageCalculationMixin",
+    "TarkovHealthEventsMixin",
+    "RepairItemProcedureMixin",
+    "FlashbangDetonateMixin",
+    "FragExplodeMixin",
+    "TaczExplodeUtilMixin"
+  ],
+  "client": [
+    "TaczCameraRecoilMixin",
+    "TaczAimMixin"
+  ],
+  "server": [],
+  "injectors": {
+    "defaultRequire": 0
+  }
+}

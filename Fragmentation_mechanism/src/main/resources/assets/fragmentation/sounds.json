@@ -1,0 +1,68 @@
+{
+  "flashbang/tinnitus": {
+    "sounds": [
+      {
+        "name": "fragmentation:flashbang/em",
+        "stream": true
+      }
+    ]
+  },
+  "breath/hold_start": {
+    "sounds": [
+      {
+        "name": "fragmentation:breath/xq",
+        "stream": false
+      }
+    ]
+  },
+  "breath/hold_stop": {
+    "sounds": [
+      {
+        "name": "fragmentation:breath/hq",
+        "stream": false
+      }
+    ]
+  },
+  "armor/ricochet": {
+    "sounds": [
+      {
+        "name": "fragmentation:armor/ricochet"
+      }
+    ]
+  },
+  "armor/penetration": {
+    "sounds": [
+      {
+        "name": "fragmentation:armor/penetration"
+      }
+    ]
+  },
+  "armor/wct": {
+    "sounds": [
+      {
+        "name": "fragmentation:armor/wct"
+      }
+    ]
+  },
+  "armor/ct": {
+    "sounds": [
+      {
+        "name": "fragmentation:armor/ct"
+      }
+    ]
+  },
+  "shielding/gaosu": {
+    "sounds": [
+      {
+        "name": "fragmentation:shielding/gaosu"
+      }
+    ]
+  },
+  "shielding/disu": {
+    "sounds": [
+      {
+        "name": "fragmentation:shielding/disu"
+      }
+    ]
+  }
+}

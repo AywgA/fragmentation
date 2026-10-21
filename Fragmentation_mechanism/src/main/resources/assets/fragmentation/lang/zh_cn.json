@@ -1,0 +1,19 @@
+{
+  "itemGroup.fragmentation": "碎裂机制",
+  "item.fragmentation.plate_level_1": "一级插板",
+  "item.fragmentation.plate_level_2": "二级插板",
+  "item.fragmentation.plate_level_3": "三级插板",
+  "item.fragmentation.plate_level_4": "四级插板",
+  "item.fragmentation.plate_level_5": "五级插板",
+  "item.fragmentation.plate_level_6": "六级插板",
+  "item.fragmentation.plate_level_7": "七级插板",
+  "tooltip.fragmentation.plate_level": "插板等级: %d",
+  "tooltip.fragmentation.plate_durability": "耐久度: %d/%d",
+  "tooltip.fragmentation.plate_threshold": "防护值: %d",
+  "message.fragmentation.plate_shattered": "插板已碎裂!",
+  "message.fragmentation.armor_destroyed": "护甲已损坏!",
+  "key.categories.fragmentation": "碎裂机制 - 调试显示",
+  "key.fragmentation.switch_view": "切换调试视图（正常/冲击波平面/穿透平面）",
+  "key.fragmentation.clear_view": "清除全部调试显示",
+  "key.fragmentation.breath_hold": "屏息（开镜时稳定枪械）"
+}
