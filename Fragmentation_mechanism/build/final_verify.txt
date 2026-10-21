@@ -1,0 +1,6 @@
+DEV: C:\mods\fragmentation_mechanism\build\libs\fragmentation-official-version1.0.0.jar
+  time=09/19/2026 12:39:35 size=570104 md5=3A0E944BF7B80D8D87F206F3686DCBC9
+REOBF: c:\mods\fragmentation_mechanism\build\reobfJar\output.jar
+  time=09/19/2026 12:39:35 size=570104 md5=3A0E944BF7B80D8D87F206F3686DCBC9
+DEV ArmorPlateItem: appendHoverText=n m_7373_=Y
+REOBF ArmorPlateItem: appendHoverText=n m_7373_=Y

@@ -1,0 +1,168 @@
+Compiled from "RenamingTransformer.java"
+public class net.minecraftforge.renamer.internal.RenamingTransformer implements net.minecraftforge.renamer.api.Transformer {
+  private static final java.lang.String ABSTRACT_FILE;
+
+  private final net.minecraftforge.renamer.internal.EnhancedRemapper remapper;
+
+  private final java.util.Set<java.lang.String> abstractParams;
+
+  private final boolean collectAbstractParams;
+
+  public net.minecraftforge.renamer.internal.RenamingTransformer(net.minecraftforge.renamer.api.ClassProvider, net.minecraftforge.renamer.relocated.net.minecraftforge.srgutils.IMappingFile, java.util.function.Consumer<java.lang.String>);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: aload_2
+       3: aload_3
+       4: iconst_1
+       5: invokespecial #38                 // Method "<init>":(Lnet/minecraftforge/renamer/api/ClassProvider;Lnet/minecraftforge/renamer/relocated/net/minecraftforge/srgutils/IMappingFile;Ljava/util/function/Consumer;Z)V
+       8: return
+
+  public net.minecraftforge.renamer.internal.RenamingTransformer(net.minecraftforge.renamer.api.ClassProvider, net.minecraftforge.renamer.relocated.net.minecraftforge.srgutils.IMappingFile, java.util.function.Consumer<java.lang.String>, boolean);
+    Code:
+       0: aload_0
+       1: invokespecial #51                 // Method java/lang/Object."<init>":()V
+       4: aload_0
+       5: invokestatic  #55                 // Method java/util/concurrent/ConcurrentHashMap.newKeySet:()Ljava/util/concurrent/ConcurrentHashMap$KeySetView;
+       8: putfield      #57                 // Field abstractParams:Ljava/util/Set;
+      11: aload_0
+      12: iload         4
+      14: putfield      #59                 // Field collectAbstractParams:Z
+      17: aload_0
+      18: new           #61                 // class net/minecraftforge/renamer/internal/EnhancedRemapper
+      21: dup
+      22: aload_1
+      23: aload_2
+      24: aload_3
+      25: invokespecial #63                 // Method net/minecraftforge/renamer/internal/EnhancedRemapper."<init>":(Lnet/minecraftforge/renamer/api/ClassProvider;Lnet/minecraftforge/renamer/relocated/net/minecraftforge/srgutils/IMappingFile;Ljava/util/function/Consumer;)V
+      28: putfield      #65                 // Field remapper:Lnet/minecraftforge/renamer/internal/EnhancedRemapper;
+      31: return
+
+  public net.minecraftforge.renamer.api.Transformer$ClassEntry process(net.minecraftforge.renamer.api.Transformer$ClassEntry);
+    Code:
+       0: new           #69                 // class net/minecraftforge/renamer/relocated/org/objectweb/asm/ClassReader
+       3: dup
+       4: aload_1
+       5: invokeinterface #73,  1           // InterfaceMethod net/minecraftforge/renamer/api/Transformer$ClassEntry.getData:()[B
+      10: invokespecial #76                 // Method net/minecraftforge/renamer/relocated/org/objectweb/asm/ClassReader."<init>":([B)V
+      13: astore_2
+      14: new           #78                 // class net/minecraftforge/renamer/relocated/org/objectweb/asm/ClassWriter
+      17: dup
+      18: iconst_0
+      19: invokespecial #81                 // Method net/minecraftforge/renamer/relocated/org/objectweb/asm/ClassWriter."<init>":(I)V
+      22: astore_3
+      23: new           #83                 // class net/minecraftforge/renamer/internal/EnhancedClassRemapper
+      26: dup
+      27: aload_3
+      28: aload_0
+      29: getfield      #65                 // Field remapper:Lnet/minecraftforge/renamer/internal/EnhancedRemapper;
+      32: aload_0
+      33: invokespecial #86                 // Method net/minecraftforge/renamer/internal/EnhancedClassRemapper."<init>":(Lnet/minecraftforge/renamer/relocated/org/objectweb/asm/ClassVisitor;Lnet/minecraftforge/renamer/internal/EnhancedRemapper;Lnet/minecraftforge/renamer/internal/RenamingTransformer;)V
+      36: astore        4
+      38: aload_2
+      39: aload         4
+      41: iconst_0
+      42: invokevirtual #90                 // Method net/minecraftforge/renamer/relocated/org/objectweb/asm/ClassReader.accept:(Lnet/minecraftforge/renamer/relocated/org/objectweb/asm/ClassVisitor;I)V
+      45: aload_3
+      46: invokevirtual #93                 // Method net/minecraftforge/renamer/relocated/org/objectweb/asm/ClassWriter.toByteArray:()[B
+      49: astore        5
+      51: aload_0
+      52: getfield      #65                 // Field remapper:Lnet/minecraftforge/renamer/internal/EnhancedRemapper;
+      55: aload_1
+      56: invokeinterface #97,  1           // InterfaceMethod net/minecraftforge/renamer/api/Transformer$ClassEntry.getClassName:()Ljava/lang/String;
+      61: invokevirtual #100                // Method net/minecraftforge/renamer/internal/EnhancedRemapper.map:(Ljava/lang/String;)Ljava/lang/String;
+      64: astore        6
+      66: aload_1
+      67: invokeinterface #104,  1          // InterfaceMethod net/minecraftforge/renamer/api/Transformer$ClassEntry.isMultiRelease:()Z
+      72: ifeq          95
+      75: aload         6
+      77: aload_1
+      78: invokeinterface #108,  1          // InterfaceMethod net/minecraftforge/renamer/api/Transformer$ClassEntry.getTime:()J
+      83: aload         5
+      85: aload_1
+      86: invokeinterface #112,  1          // InterfaceMethod net/minecraftforge/renamer/api/Transformer$ClassEntry.getVersion:()I
+      91: invokestatic  #116                // InterfaceMethod net/minecraftforge/renamer/api/Transformer$ClassEntry.create:(Ljava/lang/String;J[BI)Lnet/minecraftforge/renamer/api/Transformer$ClassEntry;
+      94: areturn
+      95: new           #124                // class java/lang/StringBuilder
+      98: dup
+      99: invokespecial #125                // Method java/lang/StringBuilder."<init>":()V
+     102: aload         6
+     104: invokevirtual #129                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+     107: ldc           #131                // String .class
+     109: invokevirtual #129                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+     112: invokevirtual #134                // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+     115: aload_1
+     116: invokeinterface #108,  1          // InterfaceMethod net/minecraftforge/renamer/api/Transformer$ClassEntry.getTime:()J
+     121: aload         5
+     123: invokestatic  #137                // InterfaceMethod net/minecraftforge/renamer/api/Transformer$ClassEntry.create:(Ljava/lang/String;J[B)Lnet/minecraftforge/renamer/api/Transformer$ClassEntry;
+     126: areturn
+
+  public net.minecraftforge.renamer.api.Transformer$ResourceEntry process(net.minecraftforge.renamer.api.Transformer$ResourceEntry);
+    Code:
+       0: ldc           #25                 // String fernflower_abstract_parameter_names.txt
+       2: aload_1
+       3: invokeinterface #150,  1          // InterfaceMethod net/minecraftforge/renamer/api/Transformer$ResourceEntry.getName:()Ljava/lang/String;
+       8: invokevirtual #154                // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+      11: ifeq          16
+      14: aconst_null
+      15: areturn
+      16: aload_1
+      17: areturn
+
+  public java.util.Collection<? extends net.minecraftforge.renamer.api.Transformer$Entry> getExtras();
+    Code:
+       0: aload_0
+       1: getfield      #57                 // Field abstractParams:Ljava/util/Set;
+       4: invokeinterface #163,  1          // InterfaceMethod java/util/Set.isEmpty:()Z
+       9: ifne          19
+      12: aload_0
+      13: getfield      #59                 // Field collectAbstractParams:Z
+      16: ifne          23
+      19: invokestatic  #169                // Method java/util/Collections.emptyList:()Ljava/util/List;
+      22: areturn
+      23: aload_0
+      24: getfield      #57                 // Field abstractParams:Ljava/util/Set;
+      27: invokeinterface #173,  1          // InterfaceMethod java/util/Set.stream:()Ljava/util/stream/Stream;
+      32: invokeinterface #178,  1          // InterfaceMethod java/util/stream/Stream.sorted:()Ljava/util/stream/Stream;
+      37: ldc           #180                // String \n
+      39: invokestatic  #186                // Method java/util/stream/Collectors.joining:(Ljava/lang/CharSequence;)Ljava/util/stream/Collector;
+      42: invokeinterface #190,  2          // InterfaceMethod java/util/stream/Stream.collect:(Ljava/util/stream/Collector;)Ljava/lang/Object;
+      47: checkcast     #122                // class java/lang/String
+      50: getstatic     #196                // Field java/nio/charset/StandardCharsets.UTF_8:Ljava/nio/charset/Charset;
+      53: invokevirtual #200                // Method java/lang/String.getBytes:(Ljava/nio/charset/Charset;)[B
+      56: astore_1
+      57: ldc           #25                 // String fernflower_abstract_parameter_names.txt
+      59: ldc2_w        #201                // long 946684800l
+      62: aload_1
+      63: invokestatic  #205                // InterfaceMethod net/minecraftforge/renamer/api/Transformer$ResourceEntry.create:(Ljava/lang/String;J[B)Lnet/minecraftforge/renamer/api/Transformer$ResourceEntry;
+      66: invokestatic  #209                // Method java/util/Collections.singletonList:(Ljava/lang/Object;)Ljava/util/List;
+      69: areturn
+
+  void storeNames(java.lang.String, java.lang.String, java.lang.String, java.util.Collection<java.lang.String>);
+    Code:
+       0: aload_0
+       1: getfield      #57                 // Field abstractParams:Ljava/util/Set;
+       4: new           #124                // class java/lang/StringBuilder
+       7: dup
+       8: invokespecial #125                // Method java/lang/StringBuilder."<init>":()V
+      11: aload_1
+      12: invokevirtual #129                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      15: bipush        32
+      17: invokevirtual #215                // Method java/lang/StringBuilder.append:(C)Ljava/lang/StringBuilder;
+      20: aload_2
+      21: invokevirtual #129                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      24: bipush        32
+      26: invokevirtual #215                // Method java/lang/StringBuilder.append:(C)Ljava/lang/StringBuilder;
+      29: aload_3
+      30: invokevirtual #129                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      33: bipush        32
+      35: invokevirtual #215                // Method java/lang/StringBuilder.append:(C)Ljava/lang/StringBuilder;
+      38: ldc           #217                // String
+      40: aload         4
+      42: invokestatic  #221                // Method java/lang/String.join:(Ljava/lang/CharSequence;Ljava/lang/Iterable;)Ljava/lang/String;
+      45: invokevirtual #129                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      48: invokevirtual #134                // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+      51: invokeinterface #224,  2          // InterfaceMethod java/util/Set.add:(Ljava/lang/Object;)Z
+      56: pop
+      57: return
+}

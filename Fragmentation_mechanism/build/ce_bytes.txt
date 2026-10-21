@@ -1,0 +1,107 @@
+Compiled from "EntryImpl.java"
+public class net.minecraftforge.renamer.internal.EntryImpl$ClassEntry extends net.minecraftforge.renamer.internal.EntryImpl implements net.minecraftforge.renamer.api.Transformer$ClassEntry {
+  private static final java.lang.String VERSION_PREFIX;
+
+  private final int release;
+
+  private final java.lang.String className;
+
+  public net.minecraftforge.renamer.internal.EntryImpl$ClassEntry(java.lang.String, long, byte[]);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: lload_2
+       3: aload         4
+       5: invokespecial #1                  // Method net/minecraftforge/renamer/internal/EntryImpl."<init>":(Ljava/lang/String;J[B)V
+       8: aload_1
+       9: ldc           #3                  // String META-INF/versions/
+      11: invokevirtual #4                  // Method java/lang/String.startsWith:(Ljava/lang/String;)Z
+      14: ifeq          94
+      17: ldc           #3                  // String META-INF/versions/
+      19: invokevirtual #5                  // Method java/lang/String.length:()I
+      22: istore        5
+      24: aload_1
+      25: bipush        47
+      27: iload         5
+      29: invokevirtual #6                  // Method java/lang/String.indexOf:(II)I
+      32: istore        6
+      34: iload         6
+      36: iconst_m1
+      37: if_icmpne     67
+      40: new           #7                  // class java/lang/IllegalArgumentException
+      43: dup
+      44: new           #8                  // class java/lang/StringBuilder
+      47: dup
+      48: invokespecial #9                  // Method java/lang/StringBuilder."<init>":()V
+      51: ldc           #10                 // String Invalid versioned class entry:
+      53: invokevirtual #11                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      56: aload_1
+      57: invokevirtual #11                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      60: invokevirtual #12                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+      63: invokespecial #13                 // Method java/lang/IllegalArgumentException."<init>":(Ljava/lang/String;)V
+      66: athrow
+      67: aload_0
+      68: aload_1
+      69: iload         5
+      71: iload         6
+      73: invokevirtual #14                 // Method java/lang/String.substring:(II)Ljava/lang/String;
+      76: invokestatic  #15                 // Method java/lang/Integer.parseInt:(Ljava/lang/String;)I
+      79: putfield      #16                 // Field release:I
+      82: aload_1
+      83: iload         6
+      85: iconst_1
+      86: iadd
+      87: invokevirtual #17                 // Method java/lang/String.substring:(I)Ljava/lang/String;
+      90: astore_1
+      91: goto          99
+      94: aload_0
+      95: iconst_m1
+      96: putfield      #16                 // Field release:I
+      99: aload_0
+     100: aload_1
+     101: iconst_0
+     102: aload_1
+     103: invokevirtual #5                  // Method java/lang/String.length:()I
+     106: bipush        6
+     108: isub
+     109: invokevirtual #14                 // Method java/lang/String.substring:(II)Ljava/lang/String;
+     112: putfield      #18                 // Field className:Ljava/lang/String;
+     115: return
+
+  public net.minecraftforge.renamer.api.Transformer$ClassEntry process(net.minecraftforge.renamer.api.Transformer);
+    Code:
+       0: aload_1
+       1: aload_0
+       2: invokeinterface #19,  2           // InterfaceMethod net/minecraftforge/renamer/api/Transformer.process:(Lnet/minecraftforge/renamer/api/Transformer$ClassEntry;)Lnet/minecraftforge/renamer/api/Transformer$ClassEntry;
+       7: areturn
+
+  public java.lang.String getClassName();
+    Code:
+       0: aload_0
+       1: getfield      #18                 // Field className:Ljava/lang/String;
+       4: areturn
+
+  public boolean isMultiRelease();
+    Code:
+       0: aload_0
+       1: getfield      #16                 // Field release:I
+       4: iconst_m1
+       5: if_icmpeq     12
+       8: iconst_1
+       9: goto          13
+      12: iconst_0
+      13: ireturn
+
+  public int getVersion();
+    Code:
+       0: aload_0
+       1: getfield      #16                 // Field release:I
+       4: ireturn
+
+  public net.minecraftforge.renamer.api.Transformer$Entry process(net.minecraftforge.renamer.api.Transformer);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: invokevirtual #20                 // Method process:(Lnet/minecraftforge/renamer/api/Transformer;)Lnet/minecraftforge/renamer/api/Transformer$ClassEntry;
+       5: areturn
+}

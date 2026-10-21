@@ -1,0 +1,361 @@
+Compiled from "EnhancedRemapper.java"
+class net.minecraftforge.renamer.internal.EnhancedRemapper extends net.minecraftforge.renamer.relocated.org.objectweb.asm.commons.Remapper {
+  private final net.minecraftforge.renamer.api.ClassProvider classProvider;
+
+  private final net.minecraftforge.renamer.relocated.net.minecraftforge.srgutils.IMappingFile map;
+
+  private final java.util.Map<java.lang.String, java.util.Optional<net.minecraftforge.renamer.internal.EnhancedRemapper$MClass>> resolved;
+
+  private final java.util.function.Consumer<java.lang.String> log;
+
+  public net.minecraftforge.renamer.internal.EnhancedRemapper(net.minecraftforge.renamer.api.ClassProvider, net.minecraftforge.renamer.relocated.net.minecraftforge.srgutils.IMappingFile, java.util.function.Consumer<java.lang.String>);
+    Code:
+       0: aload_0
+       1: invokespecial #45                 // Method net/minecraftforge/renamer/relocated/org/objectweb/asm/commons/Remapper."<init>":()V
+       4: aload_0
+       5: new           #47                 // class java/util/concurrent/ConcurrentHashMap
+       8: dup
+       9: invokespecial #48                 // Method java/util/concurrent/ConcurrentHashMap."<init>":()V
+      12: putfield      #50                 // Field resolved:Ljava/util/Map;
+      15: aload_0
+      16: aload_1
+      17: putfield      #52                 // Field classProvider:Lnet/minecraftforge/renamer/api/ClassProvider;
+      20: aload_0
+      21: aload_2
+      22: putfield      #54                 // Field map:Lnet/minecraftforge/renamer/relocated/net/minecraftforge/srgutils/IMappingFile;
+      25: aload_0
+      26: aload_3
+      27: putfield      #56                 // Field log:Ljava/util/function/Consumer;
+      30: return
+
+  public java.lang.String mapModuleName(java.lang.String);
+    Code:
+       0: aload_1
+       1: areturn
+
+  public java.lang.String mapAnnotationAttributeName(java.lang.String, java.lang.String);
+    Code:
+       0: aload_1
+       1: invokestatic  #70                 // Method net/minecraftforge/renamer/relocated/org/objectweb/asm/Type.getType:(Ljava/lang/String;)Lnet/minecraftforge/renamer/relocated/org/objectweb/asm/Type;
+       4: astore_3
+       5: aload_3
+       6: invokevirtual #74                 // Method net/minecraftforge/renamer/relocated/org/objectweb/asm/Type.getSort:()I
+       9: bipush        10
+      11: if_icmpeq     16
+      14: aload_2
+      15: areturn
+      16: aload_0
+      17: aload_3
+      18: invokevirtual #78                 // Method net/minecraftforge/renamer/relocated/org/objectweb/asm/Type.getInternalName:()Ljava/lang/String;
+      21: invokespecial #82                 // Method getClass:(Ljava/lang/String;)Ljava/util/Optional;
+      24: aconst_null
+      25: invokevirtual #88                 // Method java/util/Optional.orElse:(Ljava/lang/Object;)Ljava/lang/Object;
+      28: checkcast     #7                  // class net/minecraftforge/renamer/internal/EnhancedRemapper$MClass
+      31: astore        4
+      33: aload         4
+      35: ifnonnull     40
+      38: aload_2
+      39: areturn
+      40: aload         4
+      42: aload_2
+      43: invokevirtual #91                 // Method net/minecraftforge/renamer/internal/EnhancedRemapper$MClass.getMethods:(Ljava/lang/String;)Ljava/util/Optional;
+      46: aconst_null
+      47: invokevirtual #88                 // Method java/util/Optional.orElse:(Ljava/lang/Object;)Ljava/lang/Object;
+      50: checkcast     #93                 // class java/util/List
+      53: astore        5
+      55: aload         5
+      57: ifnonnull     62
+      60: aload_2
+      61: areturn
+      62: aload         5
+      64: invokeinterface #96,  1           // InterfaceMethod java/util/List.size:()I
+      69: iconst_1
+      70: if_icmpeq     188
+      73: aload         5
+      75: invokeinterface #100,  1          // InterfaceMethod java/util/List.iterator:()Ljava/util/Iterator;
+      80: astore        6
+      82: aload         6
+      84: invokeinterface #106,  1          // InterfaceMethod java/util/Iterator.hasNext:()Z
+      89: ifeq          186
+      92: aload         6
+      94: invokeinterface #110,  1          // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+      99: checkcast     #10                 // class net/minecraftforge/renamer/internal/EnhancedRemapper$MClass$MMethod
+     102: astore        7
+     104: aload_0
+     105: getfield      #56                 // Field log:Ljava/util/function/Consumer;
+     108: new           #112                // class java/lang/StringBuilder
+     111: dup
+     112: invokespecial #113                // Method java/lang/StringBuilder."<init>":()V
+     115: ldc           #115                // String Duplicate Annotation name:
+     117: invokevirtual #119                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+     120: aload         4
+     122: invokevirtual #122                // Method net/minecraftforge/renamer/internal/EnhancedRemapper$MClass.getName:()Ljava/lang/String;
+     125: invokevirtual #119                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+     128: ldc           #124                // String
+     130: invokevirtual #119                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+     133: aload         7
+     135: invokevirtual #125                // Method net/minecraftforge/renamer/internal/EnhancedRemapper$MClass$MMethod.getName:()Ljava/lang/String;
+     138: invokevirtual #119                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+     141: aload         7
+     143: invokevirtual #128                // Method net/minecraftforge/renamer/internal/EnhancedRemapper$MClass$MMethod.getDescriptor:()Ljava/lang/String;
+     146: invokevirtual #119                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+     149: ldc           #130                // String  ->
+     151: invokevirtual #119                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+     154: aload         4
+     156: invokevirtual #133                // Method net/minecraftforge/renamer/internal/EnhancedRemapper$MClass.getMapped:()Ljava/lang/String;
+     159: invokevirtual #119                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+     162: ldc           #124                // String
+     164: invokevirtual #119                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+     167: aload         7
+     169: invokevirtual #125                // Method net/minecraftforge/renamer/internal/EnhancedRemapper$MClass$MMethod.getName:()Ljava/lang/String;
+     172: invokevirtual #119                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+     175: invokevirtual #136                // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+     178: invokeinterface #142,  2          // InterfaceMethod java/util/function/Consumer.accept:(Ljava/lang/Object;)V
+     183: goto          82
+     186: aload_2
+     187: areturn
+     188: aload         5
+     190: iconst_0
+     191: invokeinterface #146,  2          // InterfaceMethod java/util/List.get:(I)Ljava/lang/Object;
+     196: checkcast     #10                 // class net/minecraftforge/renamer/internal/EnhancedRemapper$MClass$MMethod
+     199: invokevirtual #147                // Method net/minecraftforge/renamer/internal/EnhancedRemapper$MClass$MMethod.getMapped:()Ljava/lang/String;
+     202: areturn
+
+  public java.lang.String mapInvokeDynamicMethodName(java.lang.String, java.lang.String);
+    Code:
+       0: aload_1
+       1: areturn
+
+  public java.lang.String mapMethodName(java.lang.String, java.lang.String, java.lang.String);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: invokespecial #82                 // Method getClass:(Ljava/lang/String;)Ljava/util/Optional;
+       5: aload_2
+       6: aload_3
+       7: invokedynamic #179,  0            // InvokeDynamic #0:apply:(Ljava/lang/String;Ljava/lang/String;)Ljava/util/function/Function;
+      12: invokevirtual #183                // Method java/util/Optional.flatMap:(Ljava/util/function/Function;)Ljava/util/Optional;
+      15: invokedynamic #189,  0            // InvokeDynamic #1:apply:()Ljava/util/function/Function;
+      20: invokevirtual #191                // Method java/util/Optional.map:(Ljava/util/function/Function;)Ljava/util/Optional;
+      23: aload_2
+      24: invokevirtual #88                 // Method java/util/Optional.orElse:(Ljava/lang/Object;)Ljava/lang/Object;
+      27: checkcast     #193                // class java/lang/String
+      30: areturn
+
+  public java.lang.String mapRecordComponentName(java.lang.String, java.lang.String, java.lang.String);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: aload_2
+       3: aload_3
+       4: invokevirtual #198                // Method mapFieldName:(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+       7: areturn
+
+  public java.lang.String mapFieldName(java.lang.String, java.lang.String, java.lang.String);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: invokespecial #82                 // Method getClass:(Ljava/lang/String;)Ljava/util/Optional;
+       5: aload_2
+       6: aload_3
+       7: invokedynamic #203,  0            // InvokeDynamic #2:apply:(Ljava/lang/String;Ljava/lang/String;)Ljava/util/function/Function;
+      12: invokevirtual #183                // Method java/util/Optional.flatMap:(Ljava/util/function/Function;)Ljava/util/Optional;
+      15: invokedynamic #208,  0            // InvokeDynamic #3:apply:()Ljava/util/function/Function;
+      20: invokevirtual #191                // Method java/util/Optional.map:(Ljava/util/function/Function;)Ljava/util/Optional;
+      23: aload_2
+      24: invokevirtual #88                 // Method java/util/Optional.orElse:(Ljava/lang/Object;)Ljava/lang/Object;
+      27: checkcast     #193                // class java/lang/String
+      30: areturn
+
+  public java.lang.String mapPackageName(java.lang.String);
+    Code:
+       0: aload_0
+       1: getfield      #54                 // Field map:Lnet/minecraftforge/renamer/relocated/net/minecraftforge/srgutils/IMappingFile;
+       4: aload_1
+       5: invokeinterface #212,  2          // InterfaceMethod net/minecraftforge/renamer/relocated/net/minecraftforge/srgutils/IMappingFile.remapPackage:(Ljava/lang/String;)Ljava/lang/String;
+      10: areturn
+
+  public java.lang.String map(java.lang.String);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: invokespecial #82                 // Method getClass:(Ljava/lang/String;)Ljava/util/Optional;
+       5: invokedynamic #216,  0            // InvokeDynamic #4:apply:()Ljava/util/function/Function;
+      10: invokevirtual #191                // Method java/util/Optional.map:(Ljava/util/function/Function;)Ljava/util/Optional;
+      13: aload_0
+      14: getfield      #54                 // Field map:Lnet/minecraftforge/renamer/relocated/net/minecraftforge/srgutils/IMappingFile;
+      17: aload_1
+      18: invokeinterface #219,  2          // InterfaceMethod net/minecraftforge/renamer/relocated/net/minecraftforge/srgutils/IMappingFile.remapClass:(Ljava/lang/String;)Ljava/lang/String;
+      23: invokevirtual #88                 // Method java/util/Optional.orElse:(Ljava/lang/Object;)Ljava/lang/Object;
+      26: checkcast     #193                // class java/lang/String
+      29: areturn
+
+  public java.lang.String mapParameterName(java.lang.String, java.lang.String, java.lang.String, int, java.lang.String);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: invokespecial #82                 // Method getClass:(Ljava/lang/String;)Ljava/util/Optional;
+       5: aload_2
+       6: aload_3
+       7: invokedynamic #226,  0            // InvokeDynamic #5:apply:(Ljava/lang/String;Ljava/lang/String;)Ljava/util/function/Function;
+      12: invokevirtual #183                // Method java/util/Optional.flatMap:(Ljava/util/function/Function;)Ljava/util/Optional;
+      15: iload         4
+      17: aload         5
+      19: invokedynamic #234,  0            // InvokeDynamic #6:apply:(ILjava/lang/String;)Ljava/util/function/Function;
+      24: invokevirtual #191                // Method java/util/Optional.map:(Ljava/util/function/Function;)Ljava/util/Optional;
+      27: aload         5
+      29: invokevirtual #88                 // Method java/util/Optional.orElse:(Ljava/lang/Object;)Ljava/lang/Object;
+      32: checkcast     #193                // class java/lang/String
+      35: areturn
+
+  private java.util.Optional<net.minecraftforge.renamer.internal.EnhancedRemapper$MClass> getClass(java.lang.String);
+    Code:
+       0: aload_1
+       1: ifnull        14
+       4: aload_1
+       5: iconst_0
+       6: invokevirtual #244                // Method java/lang/String.charAt:(I)C
+       9: bipush        91
+      11: if_icmpne     18
+      14: invokestatic  #248                // Method java/util/Optional.empty:()Ljava/util/Optional;
+      17: areturn
+      18: aload_0
+      19: getfield      #50                 // Field resolved:Ljava/util/Map;
+      22: aload_1
+      23: invokeinterface #252,  2          // InterfaceMethod java/util/Map.get:(Ljava/lang/Object;)Ljava/lang/Object;
+      28: checkcast     #84                 // class java/util/Optional
+      31: astore_2
+      32: aload_2
+      33: ifnonnull     91
+      36: aload_1
+      37: invokevirtual #255                // Method java/lang/String.intern:()Ljava/lang/String;
+      40: dup
+      41: astore_3
+      42: monitorenter
+      43: aload_0
+      44: getfield      #50                 // Field resolved:Ljava/util/Map;
+      47: aload_1
+      48: invokeinterface #252,  2          // InterfaceMethod java/util/Map.get:(Ljava/lang/Object;)Ljava/lang/Object;
+      53: checkcast     #84                 // class java/util/Optional
+      56: astore_2
+      57: aload_2
+      58: ifnonnull     79
+      61: aload_0
+      62: aload_1
+      63: invokespecial #258                // Method computeClass:(Ljava/lang/String;)Ljava/util/Optional;
+      66: astore_2
+      67: aload_0
+      68: getfield      #50                 // Field resolved:Ljava/util/Map;
+      71: aload_1
+      72: aload_2
+      73: invokeinterface #262,  3          // InterfaceMethod java/util/Map.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+      78: pop
+      79: aload_3
+      80: monitorexit
+      81: goto          91
+      84: astore        4
+      86: aload_3
+      87: monitorexit
+      88: aload         4
+      90: athrow
+      91: aload_2
+      92: areturn
+    Exception table:
+       from    to  target type
+          43    81    84   any
+          84    88    84   any
+
+  private net.minecraftforge.renamer.api.ClassProvider getClassProvider();
+    Code:
+       0: aload_0
+       1: getfield      #52                 // Field classProvider:Lnet/minecraftforge/renamer/api/ClassProvider;
+       4: areturn
+
+  private net.minecraftforge.renamer.relocated.net.minecraftforge.srgutils.IMappingFile getMap();
+    Code:
+       0: aload_0
+       1: getfield      #54                 // Field map:Lnet/minecraftforge/renamer/relocated/net/minecraftforge/srgutils/IMappingFile;
+       4: areturn
+
+  private java.util.Optional<net.minecraftforge.renamer.internal.EnhancedRemapper$MClass> computeClass(java.lang.String);
+    Code:
+       0: aload_0
+       1: invokespecial #275                // Method getClassProvider:()Lnet/minecraftforge/renamer/api/ClassProvider;
+       4: aload_1
+       5: invokeinterface #276,  2          // InterfaceMethod net/minecraftforge/renamer/api/ClassProvider.getClass:(Ljava/lang/String;)Ljava/util/Optional;
+      10: astore_2
+      11: aload_0
+      12: getfield      #54                 // Field map:Lnet/minecraftforge/renamer/relocated/net/minecraftforge/srgutils/IMappingFile;
+      15: aload_1
+      16: invokeinterface #279,  2          // InterfaceMethod net/minecraftforge/renamer/relocated/net/minecraftforge/srgutils/IMappingFile.getClass:(Ljava/lang/String;)Lnet/minecraftforge/renamer/relocated/net/minecraftforge/srgutils/IMappingFile$IClass;
+      21: astore_3
+      22: aload_2
+      23: invokevirtual #282                // Method java/util/Optional.isPresent:()Z
+      26: ifne          37
+      29: aload_3
+      30: ifnonnull     37
+      33: invokestatic  #248                // Method java/util/Optional.empty:()Ljava/util/Optional;
+      36: areturn
+      37: new           #7                  // class net/minecraftforge/renamer/internal/EnhancedRemapper$MClass
+      40: dup
+      41: aload_0
+      42: aload_2
+      43: aconst_null
+      44: invokevirtual #88                 // Method java/util/Optional.orElse:(Ljava/lang/Object;)Ljava/lang/Object;
+      47: checkcast     #18                 // class net/minecraftforge/renamer/api/ClassProvider$IClassInfo
+      50: aload_3
+      51: invokespecial #285                // Method net/minecraftforge/renamer/internal/EnhancedRemapper$MClass."<init>":(Lnet/minecraftforge/renamer/internal/EnhancedRemapper;Lnet/minecraftforge/renamer/api/ClassProvider$IClassInfo;Lnet/minecraftforge/renamer/relocated/net/minecraftforge/srgutils/IMappingFile$IClass;)V
+      54: invokestatic  #289                // Method java/util/Optional.of:(Ljava/lang/Object;)Ljava/util/Optional;
+      57: areturn
+
+  private static java.lang.String lambda$mapParameterName$3(int, java.lang.String, net.minecraftforge.renamer.internal.EnhancedRemapper$MClass$MMethod);
+    Code:
+       0: aload_2
+       1: iload_0
+       2: aload_1
+       3: invokevirtual #297                // Method net/minecraftforge/renamer/internal/EnhancedRemapper$MClass$MMethod.mapParameter:(ILjava/lang/String;)Ljava/lang/String;
+       6: areturn
+
+  private static java.util.Optional lambda$mapParameterName$2(java.lang.String, java.lang.String, net.minecraftforge.renamer.internal.EnhancedRemapper$MClass);
+    Code:
+       0: aload_2
+       1: aload_0
+       2: aload_1
+       3: invokevirtual #302                // Method net/minecraftforge/renamer/internal/EnhancedRemapper$MClass.getMethod:(Ljava/lang/String;Ljava/lang/String;)Ljava/util/Optional;
+       6: areturn
+
+  private static java.util.Optional lambda$mapFieldName$1(java.lang.String, java.lang.String, net.minecraftforge.renamer.internal.EnhancedRemapper$MClass);
+    Code:
+       0: aload_2
+       1: aload_0
+       2: aload_1
+       3: invokevirtual #306                // Method net/minecraftforge/renamer/internal/EnhancedRemapper$MClass.getField:(Ljava/lang/String;Ljava/lang/String;)Ljava/util/Optional;
+       6: areturn
+
+  private static java.util.Optional lambda$mapMethodName$0(java.lang.String, java.lang.String, net.minecraftforge.renamer.internal.EnhancedRemapper$MClass);
+    Code:
+       0: aload_2
+       1: aload_0
+       2: aload_1
+       3: invokevirtual #302                // Method net/minecraftforge/renamer/internal/EnhancedRemapper$MClass.getMethod:(Ljava/lang/String;Ljava/lang/String;)Ljava/util/Optional;
+       6: areturn
+
+  static net.minecraftforge.renamer.relocated.net.minecraftforge.srgutils.IMappingFile access$000(net.minecraftforge.renamer.internal.EnhancedRemapper);
+    Code:
+       0: aload_0
+       1: invokespecial #310                // Method getMap:()Lnet/minecraftforge/renamer/relocated/net/minecraftforge/srgutils/IMappingFile;
+       4: areturn
+
+  static java.util.Optional access$100(net.minecraftforge.renamer.internal.EnhancedRemapper, java.lang.String);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: invokespecial #82                 // Method getClass:(Ljava/lang/String;)Ljava/util/Optional;
+       5: areturn
+
+  static java.util.function.Consumer access$200(net.minecraftforge.renamer.internal.EnhancedRemapper);
+    Code:
+       0: aload_0
+       1: getfield      #56                 // Field log:Ljava/util/function/Consumer;
+       4: areturn
+}

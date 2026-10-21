@@ -1,0 +1,174 @@
+Compiled from "ArmorPlateItem.java"
+public class com.fragmentation.item.ArmorPlateItem extends net.minecraft.world.item.Item {
+  private final int plateLevel;
+
+  public com.fragmentation.item.ArmorPlateItem(int, net.minecraft.world.item.Item$Properties);
+    Code:
+       0: aload_0
+       1: aload_2
+       2: invokespecial #15                 // Method net/minecraft/world/item/Item."<init>":(Lnet/minecraft/world/item/Item$Properties;)V
+       5: aload_0
+       6: iload_1
+       7: invokestatic  #21                 // Method com/fragmentation/data/PlateData.clampLevel:(I)I
+      10: putfield      #23                 // Field plateLevel:I
+      13: return
+
+  public int getPlateLevel();
+    Code:
+       0: aload_0
+       1: getfield      #23                 // Field plateLevel:I
+       4: ireturn
+
+  public static int barCapacityForLevel(int);
+    Code:
+       0: iload_0
+       1: tableswitch   { // 1 to 7
+
+                     1: 44
+
+                     2: 49
+
+                     3: 54
+
+                     4: 59
+
+                     5: 64
+
+                     6: 69
+
+                     7: 74
+               default: 79
+          }
+      44: bipush        25
+      46: goto          81
+      49: bipush        35
+      51: goto          81
+      54: bipush        50
+      56: goto          81
+      59: bipush        65
+      61: goto          81
+      64: bipush        85
+      66: goto          81
+      69: bipush        100
+      71: goto          81
+      74: bipush        120
+      76: goto          81
+      79: bipush        50
+      81: ireturn
+
+  public void m_7373_(net.minecraft.world.item.ItemStack, net.minecraft.world.level.Level, java.util.List<net.minecraft.network.chat.Component>, net.minecraft.world.item.TooltipFlag);
+    Code:
+       0: aload_1
+       1: invokestatic  #41                 // Method com/fragmentation/nbt/PlateNbt.read:(Lnet/minecraft/world/item/ItemStack;)Lcom/fragmentation/data/PlateData;
+       4: astore        5
+       6: aload         5
+       8: ifnull        124
+      11: aload_3
+      12: ldc           #43                 // String tooltip.fragmentation.plate_level
+      14: iconst_1
+      15: anewarray     #45                 // class java/lang/Object
+      18: dup
+      19: iconst_0
+      20: aload         5
+      22: invokevirtual #47                 // Method com/fragmentation/data/PlateData.getPlateLevel:()I
+      25: invokestatic  #53                 // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+      28: aastore
+      29: invokestatic  #59                 // InterfaceMethod net/minecraft/network/chat/Component.m_237110_:(Ljava/lang/String;[Ljava/lang/Object;)Lnet/minecraft/network/chat/MutableComponent;
+      32: getstatic     #65                 // Field net/minecraft/ChatFormatting.GOLD:Lnet/minecraft/ChatFormatting;
+      35: invokevirtual #71                 // Method net/minecraft/network/chat/MutableComponent.m_130940_:(Lnet/minecraft/ChatFormatting;)Lnet/minecraft/network/chat/MutableComponent;
+      38: invokeinterface #77,  2           // InterfaceMethod java/util/List.add:(Ljava/lang/Object;)Z
+      43: pop
+      44: aload_3
+      45: ldc           #79                 // String tooltip.fragmentation.plate_durability
+      47: iconst_2
+      48: anewarray     #45                 // class java/lang/Object
+      51: dup
+      52: iconst_0
+      53: aload         5
+      55: invokevirtual #82                 // Method com/fragmentation/data/PlateData.getDurability:()I
+      58: invokestatic  #53                 // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+      61: aastore
+      62: dup
+      63: iconst_1
+      64: aload         5
+      66: invokevirtual #85                 // Method com/fragmentation/data/PlateData.getMaxDurability:()I
+      69: invokestatic  #53                 // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+      72: aastore
+      73: invokestatic  #59                 // InterfaceMethod net/minecraft/network/chat/Component.m_237110_:(Ljava/lang/String;[Ljava/lang/Object;)Lnet/minecraft/network/chat/MutableComponent;
+      76: getstatic     #88                 // Field net/minecraft/ChatFormatting.GREEN:Lnet/minecraft/ChatFormatting;
+      79: invokevirtual #71                 // Method net/minecraft/network/chat/MutableComponent.m_130940_:(Lnet/minecraft/ChatFormatting;)Lnet/minecraft/network/chat/MutableComponent;
+      82: invokeinterface #77,  2           // InterfaceMethod java/util/List.add:(Ljava/lang/Object;)Z
+      87: pop
+      88: aload_3
+      89: ldc           #90                 // String tooltip.fragmentation.plate_threshold
+      91: iconst_1
+      92: anewarray     #45                 // class java/lang/Object
+      95: dup
+      96: iconst_0
+      97: aload         5
+      99: invokevirtual #93                 // Method com/fragmentation/data/PlateData.getPenetrationThreshold:()I
+     102: invokestatic  #53                 // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+     105: aastore
+     106: invokestatic  #59                 // InterfaceMethod net/minecraft/network/chat/Component.m_237110_:(Ljava/lang/String;[Ljava/lang/Object;)Lnet/minecraft/network/chat/MutableComponent;
+     109: getstatic     #96                 // Field net/minecraft/ChatFormatting.BLUE:Lnet/minecraft/ChatFormatting;
+     112: invokevirtual #71                 // Method net/minecraft/network/chat/MutableComponent.m_130940_:(Lnet/minecraft/ChatFormatting;)Lnet/minecraft/network/chat/MutableComponent;
+     115: invokeinterface #77,  2           // InterfaceMethod java/util/List.add:(Ljava/lang/Object;)Z
+     120: pop
+     121: goto          239
+     124: aload_3
+     125: ldc           #43                 // String tooltip.fragmentation.plate_level
+     127: iconst_1
+     128: anewarray     #45                 // class java/lang/Object
+     131: dup
+     132: iconst_0
+     133: aload_0
+     134: getfield      #23                 // Field plateLevel:I
+     137: invokestatic  #53                 // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+     140: aastore
+     141: invokestatic  #59                 // InterfaceMethod net/minecraft/network/chat/Component.m_237110_:(Ljava/lang/String;[Ljava/lang/Object;)Lnet/minecraft/network/chat/MutableComponent;
+     144: getstatic     #65                 // Field net/minecraft/ChatFormatting.GOLD:Lnet/minecraft/ChatFormatting;
+     147: invokevirtual #71                 // Method net/minecraft/network/chat/MutableComponent.m_130940_:(Lnet/minecraft/ChatFormatting;)Lnet/minecraft/network/chat/MutableComponent;
+     150: invokeinterface #77,  2           // InterfaceMethod java/util/List.add:(Ljava/lang/Object;)Z
+     155: pop
+     156: aload_3
+     157: ldc           #79                 // String tooltip.fragmentation.plate_durability
+     159: iconst_2
+     160: anewarray     #45                 // class java/lang/Object
+     163: dup
+     164: iconst_0
+     165: aload_0
+     166: getfield      #23                 // Field plateLevel:I
+     169: invokestatic  #98                 // Method barCapacityForLevel:(I)I
+     172: invokestatic  #53                 // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+     175: aastore
+     176: dup
+     177: iconst_1
+     178: aload_0
+     179: getfield      #23                 // Field plateLevel:I
+     182: invokestatic  #98                 // Method barCapacityForLevel:(I)I
+     185: invokestatic  #53                 // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+     188: aastore
+     189: invokestatic  #59                 // InterfaceMethod net/minecraft/network/chat/Component.m_237110_:(Ljava/lang/String;[Ljava/lang/Object;)Lnet/minecraft/network/chat/MutableComponent;
+     192: getstatic     #88                 // Field net/minecraft/ChatFormatting.GREEN:Lnet/minecraft/ChatFormatting;
+     195: invokevirtual #71                 // Method net/minecraft/network/chat/MutableComponent.m_130940_:(Lnet/minecraft/ChatFormatting;)Lnet/minecraft/network/chat/MutableComponent;
+     198: invokeinterface #77,  2           // InterfaceMethod java/util/List.add:(Ljava/lang/Object;)Z
+     203: pop
+     204: aload_3
+     205: ldc           #90                 // String tooltip.fragmentation.plate_threshold
+     207: iconst_1
+     208: anewarray     #45                 // class java/lang/Object
+     211: dup
+     212: iconst_0
+     213: aload_0
+     214: getfield      #23                 // Field plateLevel:I
+     217: bipush        10
+     219: imul
+     220: invokestatic  #53                 // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+     223: aastore
+     224: invokestatic  #59                 // InterfaceMethod net/minecraft/network/chat/Component.m_237110_:(Ljava/lang/String;[Ljava/lang/Object;)Lnet/minecraft/network/chat/MutableComponent;
+     227: getstatic     #96                 // Field net/minecraft/ChatFormatting.BLUE:Lnet/minecraft/ChatFormatting;
+     230: invokevirtual #71                 // Method net/minecraft/network/chat/MutableComponent.m_130940_:(Lnet/minecraft/ChatFormatting;)Lnet/minecraft/network/chat/MutableComponent;
+     233: invokeinterface #77,  2           // InterfaceMethod java/util/List.add:(Ljava/lang/Object;)Z
+     238: pop
+     239: return
+}

@@ -1,0 +1,2 @@
+6.5.0 ArmorPlateItem: appendHoverText=no, m_7373_=YES
+6.5.0 ItemMixin: getMaxDamage=YES, m_41462_=no

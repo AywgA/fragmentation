@@ -1,0 +1,92 @@
+=== MANIFEST.MF ===
+Manifest-Version: 1.0
+Specification-Title: fragmentation
+Specification-Vendor: AywgA
+Specification-Version: 1
+Implementation-Title: Fragmentation_mechanism
+Implementation-Version: official-version1.0.0
+Implementation-Vendor: AywgA
+Implementation-Timestamp: 2026-09-19T12:39:14+0800
+MixinConfigs: fragmentation.mixins.json
+
+
+=== fragmentation.mixins.json ===
+{
+  "required": true,
+  "minVersion": "0.8.5",
+  "package": "com.fragmentation.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "fragmentation.refmap.json",
+  "mixins": [
+    "TaczBulletMixin",
+    "TaczKineticBulletMixin",
+    "ItemStackMixin",
+    "ItemMixin",
+    "LivingEntityMixin",
+    "DamageCalculationMixin"
+  ],
+  "client": [],
+  "server": [],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
+
+=== refmap files in jar ===
+--- C:\mods\Fragmentation_mechanism\build\fresh_reobf\fragmentation.refmap.json ---
+{
+  "mappings": {
+    "com/fragmentation/mixin/TaczBulletMixin": {
+      "tick": "Lnet/minecraft/world/entity/Entity;m_8119_()V",
+      "saveWithoutId": "Lnet/minecraft/world/entity/Entity;m_20240_(Lnet/minecraft/nbt/CompoundTag;)Lnet/minecraft/nbt/CompoundTag;"
+    },
+    "com/fragmentation/mixin/ItemMixin": {
+      "getMaxDamage": "Lnet/minecraft/world/item/Item;m_41462_()I"
+    },
+    "com/fragmentation/mixin/ItemStackMixin": {
+      "getAttributeModifiers": "Lnet/minecraft/world/item/ItemStack;m_41638_(Lnet/minecraft/world/entity/EquipmentSlot;)Lcom/google/common/collect/Multimap;",
+      "getDamageValue": "Lnet/minecraft/world/item/ItemStack;m_41773_()I",
+      "hurtAndBreak": "Lnet/minecraft/world/item/ItemStack;m_41622_(ILnet/minecraft/world/entity/LivingEntity;Ljava/util/function/Consumer;)V",
+      "getMaxDamage": "Lnet/minecraft/world/item/ItemStack;m_41776_()I",
+      "setDamageValue": "Lnet/minecraft/world/item/ItemStack;m_41721_(I)V",
+      "isDamaged": "Lnet/minecraft/world/item/ItemStack;m_41768_()Z"
+    },
+    "com/fragmentation/mixin/LivingEntityMixin": {
+      "actuallyHurt": "Lnet/minecraft/world/entity/LivingEntity;m_6475_(Lnet/minecraft/world/damagesource/DamageSource;F)V",
+      "Lnet/minecraft/world/entity/LivingEntity;setHealth(F)V": "Lnet/minecraft/world/entity/LivingEntity;m_21153_(F)V",
+      "hurtArmor": "Lnet/minecraft/world/entity/LivingEntity;m_6472_(Lnet/minecraft/world/damagesource/DamageSource;F)V"
+    },
+    "com/fragmentation/mixin/DamageCalculationMixin": {
+      "getDamageAfterMagicAbsorb": "Lnet/minecraft/world/entity/LivingEntity;m_6515_(Lnet/minecraft/world/damagesource/DamageSource;F)F",
+      "getDamageAfterArmorAbsorb": "Lnet/minecraft/world/entity/LivingEntity;m_21161_(Lnet/minecraft/world/damagesource/DamageSource;F)F"
+    }
+  },
+  "data": {
+    "searge": {
+      "com/fragmentation/mixin/TaczBulletMixin": {
+        "tick": "Lnet/minecraft/world/entity/Entity;m_8119_()V",
+        "saveWithoutId": "Lnet/minecraft/world/entity/Entity;m_20240_(Lnet/minecraft/nbt/CompoundTag;)Lnet/minecraft/nbt/CompoundTag;"
+      },
+      "com/fragmentation/mixin/ItemMixin": {
+        "getMaxDamage": "Lnet/minecraft/world/item/Item;m_41462_()I"
+      },
+      "com/fragmentation/mixin/ItemStackMixin": {
+        "getAttributeModifiers": "Lnet/minecraft/world/item/ItemStack;m_41638_(Lnet/minecraft/world/entity/EquipmentSlot;)Lcom/google/common/collect/Multimap;",
+        "getDamageValue": "Lnet/minecraft/world/item/ItemStack;m_41773_()I",
+        "hurtAndBreak": "Lnet/minecraft/world/item/ItemStack;m_41622_(ILnet/minecraft/world/entity/LivingEntity;Ljava/util/function/Consumer;)V",
+        "getMaxDamage": "Lnet/minecraft/world/item/ItemStack;m_41776_()I",
+        "setDamageValue": "Lnet/minecraft/world/item/ItemStack;m_41721_(I)V",
+        "isDamaged": "Lnet/minecraft/world/item/ItemStack;m_41768_()Z"
+      },
+      "com/fragmentation/mixin/LivingEntityMixin": {
+        "actuallyHurt": "Lnet/minecraft/world/entity/LivingEntity;m_6475_(Lnet/minecraft/world/damagesource/DamageSource;F)V",
+        "Lnet/minecraft/world/entity/LivingEntity;setHealth(F)V": "Lnet/minecraft/world/entity/LivingEntity;m_21153_(F)V",
+        "hurtArmor": "Lnet/minecraft/world/entity/LivingEntity;m_6472_(Lnet/minecraft/world/damagesource/DamageSource;F)V"
+      },
+      "com/fragmentation/mixin/DamageCalculationMixin": {
+        "getDamageAfterMagicAbsorb": "Lnet/minecraft/world/entity/LivingEntity;m_6515_(Lnet/minecraft/world/damagesource/DamageSource;F)F",
+        "getDamageAfterArmorAbsorb": "Lnet/minecraft/world/entity/LivingEntity;m_21161_(Lnet/minecraft/world/damagesource/DamageSource;F)F"
+      }
+    }
+  }
+}

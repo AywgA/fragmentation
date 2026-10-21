@@ -1,0 +1,16 @@
+=== mappings.tsrg first line ===
+tsrg2 left right
+=== MD5 compare ===
+reobf mappings: 83F8CBD559749B04139928524F834C61
+createMcpToSrg: 029FE80E637EB0D24F526D8EEA62C3A3
+same: False
+=== appendHoverText lines (first 5) ===
+148815: 	appendHoverText (Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/level/Level;Ljava/util/List;Lnet/minecraft/world/item/TooltipFlag;)V m_7373_
+149030: 	appendHoverText (Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/level/Level;Ljava/util/List;Lnet/minecraft/world/item/TooltipFlag;)V m_7373_
+149035: 	appendHoverTextFromBannerBlockEntityTag (Lnet/minecraft/world/item/ItemStack;Ljava/util/List;)V m_40542_
+149040: 	lambda$appendHoverTextFromBannerBlockEntityTag$0 (Lnet/minecraft/resources/ResourceKey;)Ljava/lang/String; m_220001_
+149043: 	lambda$appendHoverTextFromBannerBlockEntityTag$1 (Ljava/util/List;Lnet/minecraft/world/item/DyeColor;Ljava/lang/String;)V m_220003_
+=== count m_7373_ ===
+23
+=== Item class line ===
+150786: net/minecraft/world/item/Item net/minecraft/world/item/Item

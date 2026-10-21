@@ -1,0 +1,76 @@
+FOUND: C:\mods\Fragmentation_mechanism\build\fresh_reobf\com\fragmentation\client\ClientShieldingFieldRenderer.class
+FOUND: C:\mods\Fragmentation_mechanism\build\fresh_reobf\com\fragmentation\client\ClientShieldingFieldRenderer$1.class
+FOUND: C:\mods\Fragmentation_mechanism\build\fresh_reobf\com\fragmentation\client\ClientShieldingFieldRenderer$PendingPacket.class
+FOUND: C:\mods\Fragmentation_mechanism\build\fresh_reobf\com\fragmentation\client\ClientShieldingFieldRenderer$Pulse.class
+FOUND: C:\mods\Fragmentation_mechanism\build\fresh_reobf\com\fragmentation\client\ClientShieldingFieldRenderer$ShieldGlowTypes.class
+FOUND: C:\mods\Fragmentation_mechanism\build\fresh_reobf\com\fragmentation\client\ClientShieldingFieldRenderer$SlowGlow.class
+FOUND: C:\mods\Fragmentation_mechanism\build\fresh_reobf\com\fragmentation\client\ClientShieldingFieldRenderer$SlowZone.class
+FOUND: C:\mods\Fragmentation_mechanism\build\fresh_reobf\com\fragmentation\client\ClientShieldingFieldRenderer$TrailSample.class
+FOUND: C:\mods\Fragmentation_mechanism\build\fresh_reobf\com\fragmentation\commands\ShieldingFieldCommand.class
+FOUND: C:\mods\Fragmentation_mechanism\build\fresh_reobf\com\fragmentation\config\ShieldingFieldConfig.class
+FOUND: C:\mods\Fragmentation_mechanism\build\fresh_reobf\com\fragmentation\event\ShieldingFieldEventHandler.class
+FOUND: C:\mods\Fragmentation_mechanism\build\fresh_reobf\com\fragmentation\network\ShieldingFieldHitPacket.class
+FOUND: C:\mods\Fragmentation_mechanism\build\fresh_reobf\com\fragmentation\network\ShieldingFieldSlowZonePacket.class
+FOUND: C:\mods\Fragmentation_mechanism\build\fresh_reobf\com\fragmentation\network\ShieldingFieldStatePacket.class
+FOUND: C:\mods\Fragmentation_mechanism\build\fresh_reobf\com\fragmentation\network\ShieldingFieldWearersPacket.class
+FOUND: C:\mods\Fragmentation_mechanism\build\fresh_reobf\com\fragmentation\shielding\ShieldingFieldManager.class
+FOUND: C:\mods\Fragmentation_mechanism\build\fresh_reobf\com\fragmentation\shielding\ShieldingFieldManager$1.class
+FOUND: C:\mods\Fragmentation_mechanism\build\fresh_reobf\com\fragmentation\shielding\ShieldingFieldManager$FieldItem.class
+FOUND: C:\mods\Fragmentation_mechanism\build\fresh_reobf\com\fragmentation\shielding\ShieldingFieldManager$HitResult.class
+FOUND: C:\mods\Fragmentation_mechanism\build\fresh_reobf\com\fragmentation\shielding\ShieldingFieldState.class
+FOUND: C:\mods\Fragmentation_mechanism\build\fresh_reobf\com\fragmentation\shielding\ShieldingFieldState$Phase.class
+=== javap -p ShieldingFieldEventHandler.class ===
+Compiled from "ShieldingFieldEventHandler.java"
+public final class com.fragmentation.event.ShieldingFieldEventHandler {
+  private static final long CONFIG_SYNC_INTERVAL_TICKS;
+  private static final long WEARER_SYNC_INTERVAL_TICKS;
+  private static final long SLOW_ZONE_SYNC_INTERVAL_TICKS;
+  private static final double SLOW_ZONE_ENTER_RANGE;
+  private static final double SLOW_ZONE_EXIT_RANGE;
+  private static final double SLOW_ZONE_VERTICAL_RANGE;
+  private static final double SLOW_ZONE_MOVE_THRESHOLD_BPT;
+  private static final java.util.Map<java.lang.Integer, java.util.Set<java.lang.Integer>> LAST_SLOW_ZONES;
+  private static final java.util.Map<java.lang.Integer, java.util.Set<java.lang.Integer>> SLOW_SOUND_ARMED;
+  private static final java.util.Map<java.lang.Long, java.lang.Integer> SLOW_SOUND_EXIT_TICKS;
+  private static final int SLOW_SOUND_DISARM_CONFIRM_TICKS;
+  private static final double CNPC_BULLET_MASS_KG;
+  private static final double MOVE_THRESHOLD_BPT;
+  private static final int HISTORY_SIZE;
+  private static final long HISTORY_EXPIRE_TICKS;
+  private static final java.util.Map<java.util.UUID, java.util.ArrayDeque<net.minecraft.world.phys.Vec3>> POSITION_HISTORY;
+  private static final java.util.Map<java.util.UUID, java.lang.Long> HISTORY_TICKS;
+  private com.fragmentation.event.ShieldingFieldEventHandler();
+  public static void onServerTick(net.minecraftforge.event.TickEvent$ServerTickEvent);
+  private static void tickSlowZones(net.minecraft.server.level.ServerLevel, long, java.util.List<net.minecraft.world.entity.LivingEntity>);
+  private static long slowSoundPairKey(int, int);
+  private static void tryPlaySlowSound(net.minecraft.world.entity.LivingEntity, net.minecraft.world.entity.player.Player);
+  private static void broadcastSlowZone(net.minecraft.server.level.ServerLevel, int, java.util.Set<java.lang.Integer>);
+  private static void tickInventoryGenerators(net.minecraft.server.level.ServerPlayer, long);
+  private static boolean processInventoryStack(net.minecraft.world.item.ItemStack, net.minecraft.world.item.ItemStack, long);
+  private static boolean shouldInterceptMelee(net.minecraft.world.entity.player.Player, net.minecraft.world.entity.LivingEntity);
+  private static void interceptMelee(net.minecraft.world.entity.player.Player, net.minecraft.world.entity.LivingEntity);
+  public static void onAttackEntity(net.minecraftforge.event.entity.player.AttackEntityEvent);
+  public static void onLivingAttack(net.minecraftforge.event.entity.living.LivingAttackEvent);
+  public static void onCnpcProjectileAttack(net.minecraftforge.event.entity.living.LivingAttackEvent);
+  private static boolean isCnpcProjectile(net.minecraft.world.entity.Entity);
+  private static void slowPassThroughFx(net.minecraft.world.entity.player.Player, net.minecraft.world.entity.LivingEntity);
+  private static boolean isMovingAttacker(net.minecraft.world.entity.LivingEntity);
+  private static boolean isSlowForZone(net.minecraft.world.entity.player.Player);
+  private static double horizontalDist(net.minecraft.world.phys.Vec3, net.minecraft.world.phys.Vec3);
+  private static net.minecraft.world.phys.Vec3 meleeContactPos(net.minecraft.world.entity.LivingEntity, net.minecraft.world.entity.LivingEntity);
+  private static double rayBoxEntry(net.minecraft.world.phys.Vec3, net.minecraft.world.phys.Vec3, net.minecraft.world.phys.AABB);
+  private static void syncConfig(net.minecraft.server.level.ServerPlayer);
+  public static void onPlayerLoggedIn(net.minecraftforge.event.entity.player.PlayerEvent$PlayerLoggedInEvent);
+  private static java.util.Set lambda$tryPlaySlowSound$10(java.lang.Integer);
+  private static void lambda$tickSlowZones$9(java.lang.Integer, java.util.Set);
+  private static boolean lambda$tickSlowZones$8(java.util.Map, net.minecraft.server.level.ServerLevel, java.lang.Integer);
+  private static boolean lambda$tickSlowZones$7(net.minecraft.server.level.ServerLevel, net.minecraft.world.entity.LivingEntity, int, double, java.lang.Integer);
+  private static java.util.Set lambda$tickSlowZones$6(java.lang.Integer);
+  private static java.util.Set lambda$tickSlowZones$5(java.lang.Integer);
+  private static java.util.Set lambda$tickSlowZones$4(java.lang.Integer);
+  private static java.util.Set lambda$tickSlowZones$3(java.lang.Integer);
+  private static java.util.ArrayDeque lambda$onServerTick$2(java.util.UUID);
+  private static boolean lambda$onServerTick$1(java.util.UUID);
+  private static boolean lambda$onServerTick$0(long, java.util.Map$Entry);
+  static {};
+}

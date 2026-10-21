@@ -1,0 +1,7 @@
+ArmorPlateItem header:
+Compiled from "ArmorPlateItem.java"
+public class com.fragmentation.item.ArmorPlateItem extends net.minecraft.world.item.Item {
+  private final int plateLevel;
+total fragmentation classes: 149
+total SRG m_ refs across jar: 847
+classes with Lxx; short obfuscated refs: 125

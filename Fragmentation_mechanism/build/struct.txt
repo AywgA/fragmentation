@@ -1,0 +1,8 @@
+appendHoverText at line 148815 belongs to class (line 148810): net/minecraft/world/item/AirItem net/minecraft/world/item/AirItem
+appendHoverText at line 149030 belongs to class (line 149024): net/minecraft/world/item/BannerItem net/minecraft/world/item/BannerItem
+Item block: lines 150786..150949, method count = 77
+ITEM BLOCK HAS: 	appendHoverText (Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/level/Level;Ljava/util/List;Lnet/minecraft/world/item/TooltipFlag;)V m_7373_
+=== createMcpToSrg ===
+size: 9129252
+first: tsrg2 left right
+Item class at index 150785 (line 150786)
