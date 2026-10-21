@@ -1,0 +1,62 @@
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.5/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+
+> Configure project :
+MixinGradle did not locate the diffplug APT plugin, skipping eclipse task configuration
+Java: 17.0.12, JVM: 17.0.12+8-LTS-286 (Oracle Corporation), Arch: amd64
+
+Directory 'C:\PCL' (Windows Registry) used for java installations does not exist
+
+> Task :downloadMcpConfig
+> Task :extractSrg UP-TO-DATE
+> Task :createMcpToSrg UP-TO-DATE
+
+> Task :compileJava
+注: SpongePowered MIXIN Annotation Processor Version=0.8.5 (MixinGradle Version=0.7.38)
+注: Supported obfuscation types: ObfuscationServiceMCP supports [notch] ObfuscationServiceFG3 supports [searge]
+注: Loading searge mappings from C:\mods\Fragmentation_mechanism\build\createMcpToSrg\output.tsrg
+注: Writing refmap to C:\mods\Fragmentation_mechanism\build\tmp\compileJava\compileJava-refmap.json
+注: Writing refmap to C:\mods\Fragmentation_mechanism\build\tmp\compileJava\compileJava-refmap.json
+注: Writing searge composite mappings to C:\mods\Fragmentation_mechanism\build\tmp\compileJava\compileJava-mappings.tsrg
+注: Writing refmap to C:\mods\Fragmentation_mechanism\build\tmp\compileJava\compileJava-refmap.json
+注: Writing refmap to C:\mods\Fragmentation_mechanism\build\tmp\compileJava\compileJava-refmap.json
+注: Writing searge composite mappings to C:\mods\Fragmentation_mechanism\build\tmp\compileJava\compileJava-mappings.tsrg
+C:\mods\Fragmentation_mechanism\src\main\java\com\fragmentation\ballistics\TaczBallisticsHandler.java:154: 错误: 找不到符号
+            || isExplosive(entity)) {
+               ^
+  符号:   方法 isExplosive(Entity)
+  位置: 类 TaczBallisticsHandler
+C:\mods\Fragmentation_mechanism\src\main\java\com\fragmentation\ballistics\TaczBallisticsHandler.java:168: 错误: 找不到符号
+        tryFragmentAtCover(entity, hitResult);
+        ^
+  符号:   方法 tryFragmentAtCover(Entity,BlockHitResult)
+  位置: 类 TaczBallisticsHandler
+C:\mods\Fragmentation_mechanism\src\main\java\com\fragmentation\mixin\TaczKineticBulletMixin.java:31: 错误: 找不到符号
+            TaczBallisticsHandler.spawnTaczBulletHole(bullet, hitResult);
+                                 ^
+  符号:   方法 spawnTaczBulletHole(Entity,BlockHitResult)
+  位置: 类 TaczBallisticsHandler
+注: 某些输入文件使用或覆盖了已过时的 API。
+注: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
+3 个错误
+
+> Task :compileJava FAILED
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':compileJava'.
+> Compilation failed; see the compiler error output for details.
+
+* Try:
+> Run with --info option to get more log output.
+> Run with --scan to get full insights.
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.5/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD FAILED in 23s
+4 actionable tasks: 2 executed, 2 up-to-date

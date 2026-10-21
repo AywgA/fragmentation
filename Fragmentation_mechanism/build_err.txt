@@ -1,0 +1,59 @@
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.5/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+
+> Configure project :
+MixinGradle did not locate the diffplug APT plugin, skipping eclipse task configuration
+Java: 17.0.12, JVM: 17.0.12+8-LTS-286 (Oracle Corporation), Arch: amd64
+
+Directory 'C:\PCL' (Windows Registry) used for java installations does not exist
+
+> Task :downloadMcpConfig
+> Task :extractSrg UP-TO-DATE
+> Task :createMcpToSrg UP-TO-DATE
+
+> Task :compileJava
+ע: SpongePowered MIXIN Annotation Processor Version=0.8.5 (MixinGradle Version=0.7.38)
+ע: Supported obfuscation types: ObfuscationServiceMCP supports [notch] ObfuscationServiceFG3 supports [searge]
+ע: Loading searge mappings from C:\mods\Fragmentation_mechanism\build\createMcpToSrg\output.tsrg
+C:\mods\Fragmentation_mechanism\src\main\java\com\fragmentation\mixin\TarkovHealthEventsMixin.java:23: ����: Mixin target com.qq.tarkovmod.runtime.health.HealthDamageEvents is public and should be specified in value
+@Mixin(targets = "com.qq.tarkovmod.runtime.health.HealthDamageEvents", remap = false)
+^
+ע: Writing refmap to C:\mods\Fragmentation_mechanism\build\tmp\compileJava\compileJava-refmap.json
+ע: Writing refmap to C:\mods\Fragmentation_mechanism\build\tmp\compileJava\compileJava-refmap.json
+ע: Writing searge composite mappings to C:\mods\Fragmentation_mechanism\build\tmp\compileJava\compileJava-mappings.tsrg
+C:\mods\Fragmentation_mechanism\src\main\java\com\fragmentation\event\AnvilRepairHandler.java:7: ����: �Ҳ�������
+import net.minecraftforge.event.AnvilRepairEvent;
+                               ^
+  ����:   �� AnvilRepairEvent
+  λ��: ����� net.minecraftforge.event
+C:\mods\Fragmentation_mechanism\src\main\java\com\fragmentation\event\AnvilRepairHandler.java:25: ����: �Ҳ�������
+    public static void onAnvilRepair(AnvilRepairEvent event) {
+                                     ^
+  ����:   �� AnvilRepairEvent
+  λ��: �� AnvilRepairHandler
+ע: Writing refmap to C:\mods\Fragmentation_mechanism\build\tmp\compileJava\compileJava-refmap.json
+ע: Writing refmap to C:\mods\Fragmentation_mechanism\build\tmp\compileJava\compileJava-refmap.json
+ע: Writing searge composite mappings to C:\mods\Fragmentation_mechanism\build\tmp\compileJava\compileJava-mappings.tsrg
+2 ������
+1 ������
+
+> Task :compileJava FAILED
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':compileJava'.
+> Compilation failed; see the compiler error output for details.
+
+* Try:
+> Run with --info option to get more log output.
+> Run with --scan to get full insights.
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.5/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD FAILED in 20s
+4 actionable tasks: 2 executed, 2 up-to-date

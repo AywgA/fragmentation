@@ -1,0 +1,1112 @@
+            // Field gunDisplayId:Lnet/minecraft/resources/ResourceLocation;
+     888: return
+
+  public void applyShotgunDamageSpread(int);
+    Code:
+       0: iload_1
+       1: iconst_1
+       2: if_icmple     13
+       5: aload_0
+       6: fconst_1
+       7: iload_1
+       8: i2f
+       9: fdiv
+      10: putfield      #185                // Field damageModifier:F
+      13: return
+
+  public void setShotDamageMultiplier(float);
+    Code:
+       0: aload_0
+       1: fload_1
+       2: fconst_0
+       3: invokestatic  #303                // Method java/lang/Math.max:(FF)F
+       6: putfield      #189                // Field shotDamageMultiplier:F
+       9: return
+
+  protected void m_8097_();
+    Code:
+       0: return
+
+  public void m_8119_();
+    Code:
+       0: aload_0
+       1: invokespecial #528                // Method net/minecraft/world/entity/projectile/Projectile.m_8119_:()V
+       4: aload_0
+       5: invokevirtual #531                // Method onBulletTick:()V
+       8: aload_0
+       9: invokevirtual #535                // Method m_9236_:()Lnet/minecraft/world/level/Level;
+      12: getfield      #538                // Field net/minecraft/world/level/Level.f_46443_:Z
+      15: ifeq          30
+      18: getstatic     #544                // Field net/minecraftforge/api/distmarker/Dist.CLIENT:Lnet/minecraftforge/api/distmarker/Dist;
+      21: aload_0
+      22: invokedynamic #561,  0            // InvokeDynamic #0:get:(Lcom/tacz/guns/entity/EntityKineticBullet;)Ljava/util/function/Supplier;
+      27: invokestatic  #567                // Method net/minecraftforge/fml/DistExecutor.unsafeRunWhenOn:(Lnet/minecraftforge/api/distmarker/Dist;Ljava/util/function/Supplier;)V
+      30: aload_0
+      31: invokevirtual #570                // Method m_20184_:()Lnet/minecraft/world/phys/Vec3;
+      34: astore_1
+      35: aload_1
+      36: getfield      #575                // Field net/minecraft/world/phys/Vec3.f_82479_:D
+      39: dstore_2
+      40: aload_1
+      41: getfield      #578                // Field net/minecraft/world/phys/Vec3.f_82480_:D
+      44: dstore        4
+      46: aload_1
+      47: getfield      #581                // Field net/minecraft/world/phys/Vec3.f_82481_:D
+      50: dstore        6
+      52: aload_1
+      53: invokevirtual #584                // Method net/minecraft/world/phys/Vec3.m_165924_:()D
+      56: dstore        8
+      58: aload_0
+      59: dload_2
+      60: dload         6
+      62: invokestatic  #588                // Method net/minecraft/util/Mth.m_14136_:(DD)D
+      65: invokestatic  #592                // Method java/lang/Math.toDegrees:(D)D
+      68: d2f
+      69: invokevirtual #595                // Method m_146922_:(F)V
+      72: aload_0
+      73: dload         4
+      75: dload         8
+      77: invokestatic  #588                // Method net/minecraft/util/Mth.m_14136_:(DD)D
+      80: invokestatic  #592                // Method java/lang/Math.toDegrees:(D)D
+      83: d2f
+      84: invokevirtual #598                // Method m_146926_:(F)V
+      87: aload_0
+      88: getfield      #601                // Field f_19860_:F
+      91: fconst_0
+      92: fcmpl
+      93: ifne          121
+      96: aload_0
+      97: getfield      #604                // Field f_19859_:F
+     100: fconst_0
+     101: fcmpl
+     102: ifne          121
+     105: aload_0
+     106: aload_0
+     107: invokevirtual #607                // Method m_146908_:()F
+     110: putfield      #604                // Field f_19859_:F
+     113: aload_0
+     114: aload_0
+     115: invokevirtual #610                // Method m_146909_:()F
+     118: putfield      #601                // Field f_19860_:F
+     121: aload_0
+     122: aload_0
+     123: getfield      #601                // Field f_19860_:F
+     126: aload_0
+     127: invokevirtual #610                // Method m_146909_:()F
+     130: invokestatic  #613                // Method m_37273_:(FF)F
+     133: invokevirtual #598                // Method m_146926_:(F)V
+     136: aload_0
+     137: aload_0
+     138: getfield      #604                // Field f_19859_:F
+     141: aload_0
+     142: invokevirtual #607                // Method m_146908_:()F
+     145: invokestatic  #613                // Method m_37273_:(FF)F
+     148: invokevirtual #595                // Method m_146922_:(F)V
+     151: aload_0
+     152: invokevirtual #614                // Method m_20185_:()D
+     155: dload_2
+     156: dadd
+     157: dstore        10
+     159: aload_0
+     160: invokevirtual #615                // Method m_20186_:()D
+     163: dload         4
+     165: dadd
+     166: dstore        12
+     168: aload_0
+     169: invokevirtual #616                // Method m_20189_:()D
+     172: dload         6
+     174: dadd
+     175: dstore        14
+     177: aload_0
+     178: dload         10
+     180: dload         12
+     182: dload         14
+     184: invokevirtual #202                // Method m_6034_:(DDD)V
+     187: aload_0
+     188: getfield      #151                // Field friction:F
+     191: fstore        16
+     193: aload_0
+     194: getfield      #148                // Field gravity:F
+     197: fstore        17
+     199: aload_0
+     200: invokevirtual #619                // Method m_20069_:()Z
+     203: ifeq          275
+     206: iconst_0
+     207: istore        18
+     209: iload         18
+     211: iconst_4
+     212: if_icmpge     262
+     215: aload_0
+     216: invokevirtual #535                // Method m_9236_:()Lnet/minecraft/world/level/Level;
+     219: getstatic     #625                // Field net/minecraft/core/particles/ParticleTypes.f_123795_:Lnet/minecraft/core/particles/SimpleParticleType;
+     222: dload         10
+     224: dload_2
+     225: ldc2_w        #626                // double 0.25d
+     228: dmul
+     229: dsub
+     230: dload         12
+     232: dload         4
+     234: ldc2_w        #626                // double 0.25d
+     237: dmul
+     238: dsub
+     239: dload         14
+     241: dload         6
+     243: ldc2_w        #626                // double 0.25d
+     246: dmul
+     247: dsub
+     248: dload_2
+     249: dload         4
+     251: dload         6
+     253: invokevirtual #631                // Method net/minecraft/world/level/Level.m_7106_:(Lnet/minecraft/core/particles/ParticleOptions;DDDDDD)V
+     256: iinc          18, 1
+     259: goto          209
+     262: ldc_w         #632                // float 0.4f
+     265: fstore        16
+     267: fload         17
+     269: ldc_w         #633                // float 0.6f
+     272: fmul
+     273: fstore        17
+     275: aload_0
+     276: aload_0
+     277: invokevirtual #570                // Method m_20184_:()Lnet/minecraft/world/phys/Vec3;
+     280: fconst_1
+     281: fload         16
+     283: fsub
+     284: f2d
+     285: invokevirtual #637                // Method net/minecraft/world/phys/Vec3.m_82490_:(D)Lnet/minecraft/world/phys/Vec3;
+     288: invokevirtual #641                // Method m_20256_:(Lnet/minecraft/world/phys/Vec3;)V
+     291: aload_0
+     292: aload_0
+     293: invokevirtual #570                // Method m_20184_:()Lnet/minecraft/world/phys/Vec3;
+     296: dconst_0
+     297: fload         17
+     299: fneg
+     300: f2d
+     301: dconst_0
+     302: invokevirtual #645                // Method net/minecraft/world/phys/Vec3.m_82520_:(DDD)Lnet/minecraft/world/phys/Vec3;
+     305: invokevirtual #641                // Method m_20256_:(Lnet/minecraft/world/phys/Vec3;)V
+     308: aload_0
+     309: getfield      #648                // Field f_19797_:I
+     312: aload_0
+     313: getfield      #144                // Field life:I
+     316: iconst_1
+     317: isub
+     318: if_icmplt     325
+     321: aload_0
+     322: invokevirtual #651                // Method m_146870_:()V
+     325: return
+
+  protected void onBulletTick();
+    Code:
+       0: aload_0
+       1: invokevirtual #535                // Method m_9236_:()Lnet/minecraft/world/level/Level;
+       4: invokevirtual #660                // Method net/minecraft/world/level/Level.m_5776_:()Z
+       7: ifne          415
+      10: aload_0
+      11: getfield      #165                // Field explosion:Z
+      14: ifeq          70
+      17: aload_0
+      18: getfield      #179                // Field explosionDelayCount:I
+      21: ifle          37
+      24: aload_0
+      25: dup
+      26: getfield      #179                // Field explosionDelayCount:I
+      29: iconst_1
+      30: isub
+      31: putfield      #179                // Field explosionDelayCount:I
+      34: goto          70
+      37: aload_0
+      38: invokevirtual #664                // Method m_19749_:()Lnet/minecraft/world/entity/Entity;
+      41: aload_0
+      42: aload_0
+      43: getfield      #174                // Field explosionDamage:F
+      46: aload_0
+      47: getfield      #176                // Field explosionRadius:F
+      50: aload_0
+      51: getfield      #181                // Field explosionKnockback:Z
+      54: aload_0
+      55: getfield      #183                // Field explosionDestroyBlock:Z
+      58: aload_0
+      59: invokevirtual #498                // Method m_20182_:()Lnet/minecraft/world/phys/Vec3;
+      62: invokestatic  #670                // Method com/tacz/guns/util/ExplodeUtil.createExplosion:(Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/entity/Entity;FFZZLnet/minecraft/world/phys/Vec3;)V
+      65: aload_0
+      66: invokevirtual #651                // Method m_146870_:()V
+      69: return
+      70: aload_0
+      71: invokevirtual #498                // Method m_20182_:()Lnet/minecraft/world/phys/Vec3;
+      74: astore_1
+      75: aload_1
+      76: aload_0
+      77: invokevirtual #570                // Method m_20184_:()Lnet/minecraft/world/phys/Vec3;
+      80: invokevirtual #674                // Method net/minecraft/world/phys/Vec3.m_82549_:(Lnet/minecraft/world/phys/Vec3;)Lnet/minecraft/world/phys/Vec3;
+      83: astore_2
+      84: aload_0
+      85: invokevirtual #535                // Method m_9236_:()Lnet/minecraft/world/level/Level;
+      88: new           #28                 // class net/minecraft/world/level/ClipContext
+      91: dup
+      92: aload_1
+      93: aload_2
+      94: getstatic     #678                // Field net/minecraft/world/level/ClipContext$Block.COLLIDER:Lnet/minecraft/world/level/ClipContext$Block;
+      97: getstatic     #682                // Field net/minecraft/world/level/ClipContext$Fluid.NONE:Lnet/minecraft/world/level/ClipContext$Fluid;
+     100: aload_0
+     101: invokespecial #685                // Method net/minecraft/world/level/ClipContext."<init>":(Lnet/minecraft/world/phys/Vec3;Lnet/minecraft/world/phys/Vec3;Lnet/minecraft/world/level/ClipContext$Block;Lnet/minecraft/world/level/ClipContext$Fluid;Lnet/minecraft/world/entity/Entity;)V
+     104: invokestatic  #691                // Method com/tacz/guns/util/block/BlockRayTrace.rayTraceBlocks:(Lnet/minecraft/world/level/Level;Lnet/minecraft/world/level/ClipContext;)Lnet/minecraft/world/phys/BlockHitResult;
+     107: astore_3
+     108: aload_3
+     109: checkcast     #693                // class net/minecraft/world/phys/BlockHitResult
+     112: astore        4
+     114: aload         4
+     116: invokevirtual #697                // Method net/minecraft/world/phys/BlockHitResult.m_6662_:()Lnet/minecraft/world/phys/HitResult$Type;
+     119: getstatic     #701                // Field net/minecraft/world/phys/HitResult$Type.MISS:Lnet/minecraft/world/phys/HitResult$Type;
+     122: if_acmpeq     131
+     125: aload         4
+     127: invokevirtual #704                // Method net/minecraft/world/phys/BlockHitResult.m_82450_:()Lnet/minecraft/world/phys/Vec3;
+     130: astore_2
+     131: aconst_null
+     132: astore        5
+     134: aload_0
+     135: getfield      #187                // Field pierce:I
+     138: iconst_1
+     139: if_icmple     149
+     142: aload_0
+     143: getfield      #165                // Field explosion:Z
+     146: ifeq          172
+     149: aload_0
+     150: aload_1
+     151: aload_2
+     152: invokestatic  #712                // Method com/tacz/guns/util/EntityUtil.findEntityOnPath:(Lnet/minecraft/world/entity/projectile/Projectile;Lnet/minecraft/world/phys/Vec3;Lnet/minecraft/world/phys/Vec3;)Lcom/tacz/guns/entity/EntityKineticBullet$EntityResult;
+     155: astore        6
+     157: aload         6
+     159: ifnull        169
+     162: aload         6
+     164: invokestatic  #718                // Method java/util/Collections.singletonList:(Ljava/lang/Object;)Ljava/util/List;
+     167: astore        5
+     169: goto          180
+     172: aload_0
+     173: aload_1
+     174: aload_2
+     175: invokestatic  #722                // Method com/tacz/guns/util/EntityUtil.f
+protected void onBulletTick();
+    Code:
+       0: aload_0
+       1: invokevirtual #535                // Method m_9236_:()Lnet/minecraft/world/level/Level;
+       4: invokevirtual #660                // Method net/minecraft/world/level/Level.m_5776_:()Z
+       7: ifne          415
+      10: aload_0
+      11: getfield      #165                // Field explosion:Z
+      14: ifeq          70
+      17: aload_0
+      18: getfield      #179                // Field explosionDelayCount:I
+      21: ifle          37
+      24: aload_0
+      25: dup
+      26: getfield      #179                // Field explosionDelayCount:I
+      29: iconst_1
+      30: isub
+      31: putfield      #179                // Field explosionDelayCount:I
+      34: goto          70
+      37: aload_0
+      38: invokevirtual #664                // Method m_19749_:()Lnet/minecraft/world/entity/Entity;
+      41: aload_0
+      42: aload_0
+      43: getfield      #174                // Field explosionDamage:F
+      46: aload_0
+      47: getfield      #176                // Field explosionRadius:F
+      50: aload_0
+      51: getfield      #181                // Field explosionKnockback:Z
+      54: aload_0
+      55: getfield      #183                // Field explosionDestroyBlock:Z
+      58: aload_0
+      59: invokevirtual #498                // Method m_20182_:()Lnet/minecraft/world/phys/Vec3;
+      62: invokestatic  #670                // Method com/tacz/guns/util/ExplodeUtil.createExplosion:(Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/entity/Entity;FFZZLnet/minecraft/world/phys/Vec3;)V
+      65: aload_0
+      66: invokevirtual #651                // Method m_146870_:()V
+      69: return
+      70: aload_0
+      71: invokevirtual #498                // Method m_20182_:()Lnet/minecraft/world/phys/Vec3;
+      74: astore_1
+      75: aload_1
+      76: aload_0
+      77: invokevirtual #570                // Method m_20184_:()Lnet/minecraft/world/phys/Vec3;
+      80: invokevirtual #674                // Method net/minecraft/world/phys/Vec3.m_82549_:(Lnet/minecraft/world/phys/Vec3;)Lnet/minecraft/world/phys/Vec3;
+      83: astore_2
+      84: aload_0
+      85: invokevirtual #535                // Method m_9236_:()Lnet/minecraft/world/level/Level;
+      88: new           #28                 // class net/minecraft/world/level/ClipContext
+      91: dup
+      92: aload_1
+      93: aload_2
+      94: getstatic     #678                // Field net/minecraft/world/level/ClipContext$Block.COLLIDER:Lnet/minecraft/world/level/ClipContext$Block;
+      97: getstatic     #682                // Field net/minecraft/world/level/ClipContext$Fluid.NONE:Lnet/minecraft/world/level/ClipContext$Fluid;
+     100: aload_0
+     101: invokespecial #685                // Method net/minecraft/world/level/ClipContext."<init>":(Lnet/minecraft/world/phys/Vec3;Lnet/minecraft/world/phys/Vec3;Lnet/minecraft/world/level/ClipContext$Block;Lnet/minecraft/world/level/ClipContext$Fluid;Lnet/minecraft/world/entity/Entity;)V
+     104: invokestatic  #691                // Method com/tacz/guns/util/block/BlockRayTrace.rayTraceBlocks:(Lnet/minecraft/world/level/Level;Lnet/minecraft/world/level/ClipContext;)Lnet/minecraft/world/phys/BlockHitResult;
+     107: astore_3
+     108: aload_3
+     109: checkcast     #693                // class net/minecraft/world/phys/BlockHitResult
+     112: astore        4
+     114: aload         4
+     116: invokevirtual #697                // Method net/minecraft/world/phys/BlockHitResult.m_6662_:()Lnet/minecraft/world/phys/HitResult$Type;
+     119: getstatic     #701                // Field net/minecraft/world/phys/HitResult$Type.MISS:Lnet/minecraft/world/phys/HitResult$Type;
+     122: if_acmpeq     131
+     125: aload         4
+     127: invokevirtual #704                // Method net/minecraft/world/phys/BlockHitResult.m_82450_:()Lnet/minecraft/world/phys/Vec3;
+     130: astore_2
+     131: aconst_null
+     132: astore        5
+     134: aload_0
+     135: getfield      #187                // Field pierce:I
+     138: iconst_1
+     139: if_icmple     149
+     142: aload_0
+     143: getfield      #165                // Field explosion:Z
+     146: ifeq          172
+     149: aload_0
+     150: aload_1
+     151: aload_2
+     152: invokestatic  #712                // Method com/tacz/guns/util/EntityUtil.findEntityOnPath:(Lnet/minecraft/world/entity/projectile/Projectile;Lnet/minecraft/world/phys/Vec3;Lnet/minecraft/world/phys/Vec3;)Lcom/tacz/guns/entity/EntityKineticBullet$EntityResult;
+     155: astore        6
+     157: aload         6
+     159: ifnull        169
+     162: aload         6
+     164: invokestatic  #718                // Method java/util/Collections.singletonList:(Ljava/lang/Object;)Ljava/util/List;
+     167: astore        5
+     169: goto          180
+     172: aload_0
+     173: aload_1
+     174: aload_2
+     175: invokestatic  #722                // Method com/tacz/guns/util/EntityUtil.findEntitiesOnPath:(Lnet/minecraft/world/entity/projectile/Projectile;Lnet/minecraft/world/phys/Vec3;Lnet/minecraft/world/phys/Vec3;)Ljava/util/List;
+     178: astore        5
+     180: aload         5
+     182: ifnull        407
+     185: aload         5
+     187: invokeinterface #725,  1          // InterfaceMethod java/util/List.isEmpty:()Z
+     192: ifne          407
+     195: aload         5
+     197: iconst_0
+     198: anewarray     #9                  // class com/tacz/guns/entity/EntityKineticBullet$EntityResult
+     201: invokeinterface #729,  2          // InterfaceMethod java/util/List.toArray:([Ljava/lang/Object;)[Ljava/lang/Object;
+     206: checkcast     #731                // class "[Lcom/tacz/guns/entity/EntityKineticBullet$EntityResult;"
+     209: astore        6
+     211: iconst_0
+     212: istore        7
+     214: iload         7
+     216: aload_0
+     217: getfield      #187                // Field pierce:I
+     220: if_icmplt     229
+     223: iload         7
+     225: iconst_1
+     226: if_icmpge     325
+     229: iload         7
+     231: aload         6
+     233: arraylength
+     234: iconst_1
+     235: isub
+     236: if_icmpge     325
+     239: iload         7
+     241: istore        8
+     243: iload         7
+     245: iconst_1
+     246: iadd
+     247: istore        9
+     249: iload         9
+     251: aload         6
+     253: arraylength
+     254: if_icmpge     295
+     257: aload         6
+     259: iload         9
+     261: aaload
+     262: getfield      #734                // Field com/tacz/guns/entity/EntityKineticBullet$EntityResult.hitVec:Lnet/minecraft/world/phys/Vec3;
+     265: aload_1
+     266: invokevirtual #738                // Method net/minecraft/world/phys/Vec3.m_82554_:(Lnet/minecraft/world/phys/Vec3;)D
+     269: aload         6
+     271: iload         8
+     273: aaload
+     274: getfield      #734                // Field com/tacz/guns/entity/EntityKineticBullet$EntityResult.hitVec:Lnet/minecraft/world/phys/Vec3;
+     277: aload_1
+     278: invokevirtual #738                // Method net/minecraft/world/phys/Vec3.m_82554_:(Lnet/minecraft/world/phys/Vec3;)D
+     281: dcmpg
+     282: ifge          289
+     285: iload         9
+     287: istore        8
+     289: iinc          9, 1
+     292: goto          249
+     295: aload         6
+     297: iload         7
+     299: aaload
+     300: astore        9
+     302: aload         6
+     304: iload         7
+     306: aload         6
+     308: iload         8
+     310: aaload
+     311: aastore
+     312: aload         6
+     314: iload         8
+     316: aload         9
+     318: aastore
+     319: iinc          7, 1
+     322: goto          214
+     325: aload         6
+     327: astore        7
+     329: aload         7
+     331: arraylength
+     332: istore        8
+     334: iconst_0
+     335: istore        9
+     337: iload         9
+     339: iload         8
+     341: if_icmpge     407
+     344: aload         7
+     346: iload         9
+     348: aaload
+     349: astore        10
+     351: new           #740                // class com/tacz/guns/util/TacHitResult
+     354: dup
+     355: aload         10
+     357: invokespecial #743                // Method com/tacz/guns/util/TacHitResult."<init>":(Lcom/tacz/guns/entity/EntityKineticBullet$EntityResult;)V
+     360: astore_3
+     361: aload_0
+     362: aload_3
+     363: checkcast     #740                // class com/tacz/guns/util/TacHitResult
+     366: aload_1
+     367: aload_2
+     368: invokevirtual #747                // Method onHitEntity:(Lcom/tacz/guns/util/TacHitResult;Lnet/minecraft/world/phys/Vec3;Lnet/minecraft/world/phys/Vec3;)V
+     371: aload_0
+     372: dup
+     373: getfield      #187                // Field pierce:I
+     376: iconst_1
+     377: isub
+     378: putfield      #187                // Field pierce:I
+     381: aload_0
+     382: getfield      #187                // Field pierce:I
+     385: iconst_1
+     386: if_icmplt     396
+     389: aload_0
+     390: getfield      #165                // Field explosion:Z
+     393: ifeq          401
+     396: aload_0
+     397: invokevirtual #651                // Method m_146870_:()V
+     400: return
+     401: iinc          9, 1
+     404: goto          337
+     407: aload_0
+     408: aload         4
+     410: aload_1
+     411: aload_2
+     412: invokevirtual #751                // Method onHitBlock:(Lnet/minecraft/world/phys/BlockHitResult;Lnet/minecraft/world/phys/Vec3;Lnet/minecraft/world/phys/Vec3;)V
+     415: return
+
+  public void shoot(double, double, float, org.joml.Vector2d);
+    Code:
+       0: new           #770                // class org/joml/Vector3d
+       3: dup
+       4: aload         6
+       6: getfield      #774                // Field org/joml/Vector2d.x:D
+       9: aload         6
+      11: getfield      #776                // Field org/joml/Vector2d.y:D
+      14: ldc2_w        #777                // double 8.0d
+      17: invokespecial #780                // Method org/joml/Vector3d."<init>":(DDD)V
+      20: astore        7
+      22: aload         7
+      24: dload_1
+      25: ldc2_w        #781                // double 0.01745329238474369d
+      28: dmul
+      29: invokevirtual #786                // Method org/joml/Vector3d.rotateX:(D)Lorg/joml/Vector3d;
+      32: pop
+      33: aload         7
+      35: dload_3
+      36: dneg
+      37: ldc2_w        #781                // double 0.01745329238474369d
+      40: dmul
+      41: invokevirtual #789                // Method org/joml/Vector3d.rotateY:(D)Lorg/joml/Vector3d;
+      44: pop
+      45: new           #572                // class net/minecraft/world/phys/Vec3
+      48: dup
+      49: aload         7
+      51: getfield      #790                // Field org/joml/Vector3d.x:D
+      54: aload         7
+      56: getfield      #791                // Field org/joml/Vector3d.y:D
+      59: aload         7
+      61: getfield      #793                // Field org/joml/Vector3d.z:D
+      64: invokespecial #794                // Method net/minecraft/world/phys/Vec3."<init>":(DDD)V
+      67: invokevirtual #797                // Method net/minecraft/world/phys/Vec3.m_82541_:()Lnet/minecraft/world/phys/Vec3;
+      70: fload         5
+      72: f2d
+      73: invokevirtual #637                // Method net/minecraft/world/phys/Vec3.m_82490_:(D)Lnet/minecraft/world/phys/Vec3;
+      76: astore        8
+      78: aload_0
+      79: aload         8
+      81: getfield      #575                // Field net/minecraft/world/phys/Vec3.f_82479_:D
+      84: aload         8
+      86: getfield      #578                // Field net/minecraft/world/phys/Vec3.f_82480_:D
+      89: aload         8
+      91: getfield      #581                // Field net/minecraft/world/phys/Vec3.f_82481_:D
+      94: invokevirtual #800                // Method m_20334_:(DDD)V
+      97: aload         8
+      99: invokevirtual #584                // Method net/minecraft/world/phys/Vec3.m_165924_:()D
+     102: dstore        9
+     104: aload_0
+     105: aload         8
+     107: getfield      #575                // Field net/minecraft/world/phys/Vec3.f_82479_:D
+     110: aload         8
+     112: getfield      #581                // Field net/minecraft/world/phys/Vec3.f_82481_:D
+     115: invokestatic  #588                // Method net/minecraft/util/Mth.m_14136_:(DD)D
+     118: ldc2_w        #801                // double 57.2957763671875d
+     121: dmul
+     122: d2f
+     123: invokevirtual #595                // Method m_146922_:(F)V
+     126: aload_0
+     127: aload         8
+     129: getfield      #578                // Field net/minecraft/world/phys/Vec3.f_82480_:D
+     132: dload         9
+     134: invokestatic  #588                // Method net/minecraft/util/Mth.m_14136_:(DD)D
+     137: ldc2_w        #801                // double 57.2957763671875d
+     140: dmul
+     141: d2f
+     142: invokevirtual #598                // Method m_146926_:(F)V
+     145: aload_0
+     146: aload_0
+     147: invokevirtual #607                // Method m_146908_:()F
+     150: putfield      #604                // Field f_19859_:F
+     153: aload_0
+     154: aload_0
+     155: invokevirtual #610                // Method m_146909_:()F
+     158: putfield      #601                // Field f_19860_:F
+     161: return
+
+  public void shootFromRotation(net.minecraft.world.entity.Entity, float, float, float, float, org.joml.Vector2d);
+    Code:
+       0: aload_0
+       1: fload_2
+       2: f2d
+       3: fload_3
+       4: f2d
+       5: fload         5
+       7: aload         6
+       9: invokevirtual #815                // Method shoot:(DDFLorg/joml/Vector2d;)V
+      12: aload_1
+      13: invokevirtual #818                // Method net/minecraft/world/entity/Entity.m_20184_:()Lnet/minecraft/world/phys/Vec3;
+      16: astore        7
+      18: aload_0
+      19: aload_0
+      20: invokevirtual #570                // Method m_20184_:()Lnet/minecraft/world/phys/Vec3;
+      23: aload         7
+      25: getfield      #575                // Field net/minecraft/world/phys/Vec3.f_82479_:D
+      28: aload_1
+      29: invokevirtual #821                // Method net/minecraft/world/entity/Entity.m_20096_:()Z
+      32: ifeq          39
+      35: dconst_0
+      36: goto          44
+      39: aload         7
+      41: getfield      #578                // Field net/minecraft/world/phys/Vec3.f_82480_:D
+      44: aload         7
+      46: getfield      #581                // Field net/minecraft/world/phys/Vec3.f_82481_:D
+      49: invokevirtual #645                // Method net/minecraft/world/phys/Vec3.m_82520_:(DDD)Lnet/minecraft/world/phys/Vec3;
+      52: invokevirtual #641                // Method m_20256_:(Lnet/minecraft/world/phys/Vec3;)V
+      55: return
+
+protected void onHitEntity(com.tacz.guns.util.TacHitResult, net.minecraft.world.phys.Vec3, net.minecraft.world.phys.Vec3);
+    Code:
+       0: aload_1
+       1: invokevirtual #829                // Method com/tacz/guns/util/TacHitResult.m_82443_:()Lnet/minecraft/world/entity/Entity;
+       4: astore        5
+       6: aload         5
+       8: instanceof    #831                // class com/tacz/guns/api/entity/ITargetEntity
+      11: ifeq          55
+      14: aload         5
+      16: checkcast     #831                // class com/tacz/guns/api/entity/ITargetEntity
+      19: astore        4
+      21: aload_0
+      22: invokevirtual #835                // Method m_269291_:()Lnet/minecraft/world/damagesource/DamageSources;
+      25: aload_0
+      26: aload_0
+      27: invokevirtual #664                // Method m_19749_:()Lnet/minecraft/world/entity/Entity;
+      30: invokevirtual #841                // Method net/minecraft/world/damagesource/DamageSources.m_269390_:(Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/world/damagesource/DamageSource;
+      33: astore        5
+      35: aload         4
+      37: aload_0
+      38: aload_1
+      39: aload         5
+      41: aload_0
+      42: aload_1
+      43: invokevirtual #842                // Method com/tacz/guns/util/TacHitResult.m_82450_:()Lnet/minecraft/world/phys/Vec3;
+      46: invokevirtual #845                // Method getDamage:(Lnet/minecraft/world/phys/Vec3;)F
+      49: invokeinterface #849,  5          // InterfaceMethod com/tacz/guns/api/entity/ITargetEntity.onProjectileHit:(Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/phys/EntityHitResult;Lnet/minecraft/world/damagesource/DamageSource;F)V
+      54: return
+      55: aload_1
+      56: invokevirtual #829                // Method com/tacz/guns/util/TacHitResult.m_82443_:()Lnet/minecraft/world/entity/Entity;
+      59: astore        4
+      61: aload_0
+      62: invokevirtual #664                // Method m_19749_:()Lnet/minecraft/world/entity/Entity;
+      65: astore        5
+      67: aload         5
+      69: instanceof    #227                // class net/minecraft/world/entity/LivingEntity
+      72: ifeq          83
+      75: aload         5
+      77: checkcast     #227                // class net/minecraft/world/entity/LivingEntity
+      80: goto          84
+      83: aconst_null
+      84: astore        6
+      86: aload_0
+      87: aload         4
+      89: invokestatic  #853                // Method com/tacz/guns/entity/EntityKineticBullet$MaybeMultipartEntity.of:(Lnet/minecraft/world/entity/Entity;)Lcom/tacz/guns/entity/EntityKineticBullet$MaybeMultipartEntity;
+      92: invokevirtual #857                // Method createDamageSources:(Lcom/tacz/guns/entity/EntityKineticBullet$MaybeMultipartEntity;)Lorg/apache/commons/lang3/tuple/Pair;
+      95: astore        7
+      97: aload_1
+      98: invokevirtual #860                // Method com/tacz/guns/util/TacHitResult.isHeadshot:()Z
+     101: istore        8
+     103: aload_0
+     104: aload_1
+     105: invokevirtual #842                // Method com/tacz/guns/util/TacHitResult.m_82450_:()Lnet/minecraft/world/phys/Vec3;
+     108: invokevirtual #845                // Method getDamage:(Lnet/minecraft/world/phys/Vec3;)F
+     111: fstore        9
+     113: aload_0
+     114: getfield      #305                // Field headShot:F
+     117: fconst_0
+     118: invokestatic  #303                // Method java/lang/Math.max:(FF)F
+     121: fstore        10
+     123: new           #41                 // class com/tacz/guns/api/event/common/EntityHurtByGunEvent$Pre
+     126: dup
+     127: aload_0
+     128: aload         4
+     130: aload         6
+     132: aload_0
+     133: getfield      #247                // Field gunId:Lnet/minecraft/resources/ResourceLocation;
+     136: aload_0
+     137: getfield      #504                // Field gunDisplayId:Lnet/minecraft/resources/ResourceLocation;
+     140: fload         9
+     142: aload         7
+     144: iload         8
+     146: fload         10
+     148: getstatic     #866                // Field net/minecraftforge/fml/LogicalSide.SERVER:Lnet/minecraftforge/fml/LogicalSide;
+     151: invokespecial #869                // Method com/tacz/guns/api/event/common/EntityHurtByGunEvent$Pre."<init>":(Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;FLorg/apache/commons/lang3/tuple/Pair;ZFLnet/minecraftforge/fml/LogicalSide;)V
+     154: astore        11
+     156: getstatic     #875                // Field net/minecraftforge/common/MinecraftForge.EVENT_BUS:Lnet/minecraftforge/eventbus/api/IEventBus;
+     159: aload         11
+     161: invokeinterface #881,  2          // InterfaceMethod net/minecraftforge/eventbus/api/IEventBus.post:(Lnet/minecraftforge/eventbus/api/Event;)Z
+     166: istore        12
+     168: iload         12
+     170: ifeq          174
+     173: return
+     174: aload         11
+     176: invokevirtual #886                // Method com/tacz/guns/api/event/common/EntityHurtByGunEvent$Pre.getHurtEntity:()Lnet/minecraft/world/entity/Entity;
+     179: astore        4
+     181: aload         4
+     183: invokestatic  #853                // Method com/tacz/guns/entity/EntityKineticBullet$MaybeMultipartEntity.of:(Lnet/minecraft/world/entity/Entity;)Lcom/tacz/guns/entity/EntityKineticBullet$MaybeMultipartEntity;
+     186: astore        13
+     188: aload         11
+     190: invokevirtual #890                // Method com/tacz/guns/api/event/common/EntityHurtByGunEvent$Pre.getAttacker:()Lnet/minecraft/world/entity/LivingEntity;
+     193: astore        6
+     195: aload         11
+     197: invokevirtual #894                // Method com/tacz/guns/api/event/common/EntityHurtByGunEvent$Pre.getGunId:()Lnet/minecraft/resources/ResourceLocation;
+     200: astore        14
+     202: aload         11
+     204: invokevirtual #897                // Method com/tacz/guns/api/event/common/EntityHurtByGunEvent$Pre.getBaseAmount:()F
+     207: fstore        9
+     209: aload         11
+     211: getstatic     #903                // Field com/tacz/guns/api/event/common/GunDamageSourcePart.NON_ARMOR_PIERCING:Lcom/tacz/guns/api/event/common/GunDamageSourcePart;
+     214: invokevirtual #907                // Method com/tacz/guns/api/event/common/EntityHurtByGunEvent$Pre.getDamageSource:(Lcom/tacz/guns/api/event/common/GunDamageSourcePart;)Lnet/minecraft/world/damagesource/DamageSource;
+     217: aload         11
+     219: getstatic     #910                // Field com/tacz/guns/api/event/common/GunDamageSourcePart.ARMOR_PIERCING:Lcom/tacz/guns/api/event/common/GunDamageSourcePart;
+     222: invokevirtual #907                // Method com/tacz/guns/api/event/common/EntityHurtByGunEvent$Pre.getDamageSource:(Lcom/tacz/guns/api/event/common/GunDamageSourcePart;)Lnet/minecraft/world/damagesource/DamageSource;
+     225: invokestatic  #913                // Method org/apache/commons/lang3/tuple/Pair.of:(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/tuple/Pair;
+     228: astore        7
+     230: aload         11
+     232: invokevirtual #916                // Method com/tacz/guns/api/event/common/EntityHurtByGunEvent$Pre.isHeadShot:()Z
+     235: istore        8
+     237: aload         11
+     239: invokevirtual #919                // Method com/tacz/guns/api/event/common/EntityHurtByGunEvent$Pre.getHeadshotMultiplier:()F
+     242: fstore        10
+     244: aload         4
+     246: ifnonnull     250
+     249: return
+     250: aload_0
+     251: getfield      #167                // Field igniteEntity:Z
+     254: ifeq          338
+     257: getstatic     #922                // Field com/tacz/guns/config/common/AmmoConfig.IGNITE_ENTITY:Lnet/minecraftforge/common/ForgeConfigSpec$BooleanValue;
+     260: invokevirtual #472                // Method net/minecraftforge/common/ForgeConfigSpec$BooleanValue.get:()Ljava/lang/Object;
+     263: checkcast     #349                // class java/lang/Boolean
+     266: invokevirtual #375                // Method java/lang/Boolean.booleanValue:()Z
+     269: ifeq          338
+     272: aload         4
+     274: aload_0
+     275: getfield      #171                // Field igniteEntityTime:I
+     278: invokevirtual #925                // Method net/minecraft/world/entity/Entity.m_20254_:(I)V
+     281: aload_0
+     282: invokevirtual #535                // Method m_9236_:()Lnet/minecraft/world/level/Level;
+     285: astore        16
+     287: aload         16
+     289: instanceof    #927                // class net/minecraft/server/level/ServerLevel
+     292: ifeq          338
+     295: aload         16
+     297: checkcast     #927                // class net/minecraft/server/level/ServerLevel
+     300: astore        15
+     302: aload         15
+     304: getstatic     #930                // Field net/minecraft/core/particles/ParticleTypes.f_123756_:Lnet/minecraft/core/particles/SimpleParticleType;
+     307: aload         4
+     309: invokevirtual #931                // Method net/minecraft/world/entity/Entity.m_20185_:()D
+     312: aload         4
+     314: invokevirtual #932                // Method net/minecraft/world/entity/Entity.m_20186_:()D
+     317: aload         4
+     319: invokevirtual #933                // Method net/minecraft/world/entity/Entity.m_20192_:()F
+     322: f2d
+     323: dadd
+     324: aload         4
+     326: invokevirtual #934                // Method net/minecraft/world/entity/Entity.m_20189_:()D
+     329: iconst_1
+     330: dconst_0
+     331: dconst_0
+     332: dconst_0
+     333: dconst_0
+     334: invokevirtual #938                // Method net/minecraft/server/level/ServerLevel.m_8767_:(Lnet/minecraft/core/particles/ParticleOptions;DDDIDDDD)I
+     337: pop
+     338: iload         8
+     340: ifeq          350
+     343: fload         9
+     345: fload         10
+     347: fmul
+     348: fstore        9
+     350: aload         13
+     352: invokevirtual #941                // Method com/tacz/guns/entity/EntityKineticBullet$MaybeMultipartEntity.core:()Lnet/minecraft/world/entity/Entity;
+     355: astore        16
+     357: aload         16
+     359: instanceof    #227                // class net/minecraft/world/entity/LivingEntity
+     362: ifeq          411
+     365: aload         16
+     367: checkcast     #227                // class net/minecraft/world/entity/LivingEntity
+     370: astore        15
+     372: aload         15
+     374: invokestatic  #946                // InterfaceMethod com/tacz/guns/api/entity/KnockBackModifier.fromLivingEntity:(Lnet/minecraft/world/entity/LivingEntity;)Lcom/tacz/guns/api/entity/KnockBackModifier;
+     377: astore        16
+     379: aload         16
+     381: aload_0
+     382: getfield      #163                // Field knockback:F
+     385: f2d
+     386: invokeinterface #950,  3          // InterfaceMethod com/tacz/guns/api/entity/KnockBackModifier.setKnockBackStrength:(D)V
+     391: aload_0
+     392: aload         13
+     394: fload         9
+     396: aload         7
+     398: invokevirtual #954                // Method tacAttackEntity:(Lcom/tacz/guns/entity/EntityKineticBullet$MaybeMultipartEntity;FLorg/apache/commons/lang3/tuple/Pair;)V
+     401: aload         16
+     403: invokeinterface #957,  1          // InterfaceMethod com/tacz/guns/api/entity/KnockBackModifier.resetKnockBackStrength:()V
+     408: goto          421
+     411: aload_0
+     412: aload         13
+     414: fload         9
+     416: aload         7
+     418: invokevirtual #954                // Method tacAttackEntity:(Lcom/tacz/guns/entity/EntityKineticBullet$MaybeMultipartEntity;FLorg/apache/commons/lang3/tuple/Pair;)V
+     421: aload_0
+     422: getfield      #165                // Field explosion:Z
+     425: ifeq          465
+     428: aload         13
+     430: invokevirtual #941                // Method com/tacz/guns/entity/EntityKineticBullet$MaybeMultipartEntity.core:()Lnet/minecraft/world/entity/Entity;
+     433: iconst_0
+     434: putfield      #960                // Field net/minecraft/world/entity/Entity.f_19802_:I
+     437: aload_0
+     438: invokevirtual #664                // Method m_19749_:()Lnet/minecraft/world/entity/Entity;
+     441: aload_0
+     442: aload_0
+     443: getfield      #174                // Field explosionDamage:F
+     446: aload_0
+     447: getfield      #176                // Field explosionRadius:F
+     450: aload_0
+     451: getfield      #181                // Field explosionKnockback:Z
+     454: aload_0
+     455: getfield      #183                // Field explosionDestroyBlock:Z
+     458: aload_1
+     459: invokevirtual #842                // Method com/tacz/guns/util/TacHitResult.m_82450_:()Lnet/minecraft/world/phys/Vec3;
+     462: invokestatic  #670                // Method com/tacz/guns/util/ExplodeUtil.createExplosion:(Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/entity/Entity;FFZZLnet/minecraft/world/phys/Vec3;)V
+     465: aload         13
+     467: invokevirtual #941                // Method com/tacz/guns/entity/EntityKineticBullet$MaybeMultipartEntity.core:()Lnet/minecraft/world/entity/Entity;
+     470: astore        16
+     472: aload         16
+     474: instanceof    #227                // class net/minecraft/world/entity/LivingEntity
+     477: ifeq          670
+     480: aload         16
+     482: checkcast     #227                // class net/minecraft/world/entity/LivingEntity
+     485: astore        15
+     487: aload_0
+     488: invokevirtual #535                // Method m_9236_:()Lnet/minecraft/world/level/Level;
+     491: getfield      #538                // Field net/minecraft/world/level/Level.f_46443_:Z
+     494: ifne          670
+     497: aload         6
+     499: ifnonnull     506
+     502: iconst_0
+     503: goto          511
+     506: aload         6
+     508: invokevirtual #963                // Method net/minecraft/world/entity/LivingEntity.m_19879_:()I
+     511: istore        16
+     513: aload         15
+     515: invokevirtual #966                // Method net/minecraft/world/entity/LivingEntity.m_21224_:()Z
+     518: ifeq          597
+     521: getstatic     #875                // Field net/minecraftforge/common/MinecraftForge.EVENT_BUS:Lnet/minecraftforge/eventbus/api/IEventBus;
+     524: new           #968                // class com/tacz/guns/api/event/common/EntityKillByGunEvent
+     527: dup
+     528: aload_0
+     529: aload         15
+     531: aload         6
+     533: aload         14
+     535: aload_0
+     536: getfield      #504                // Field gunDisplayId:Lnet/minecraft/resources/ResourceLocation;
+     539: fload         9
+     541: aload         7
+     543: iload         8
+     545: fload         10
+     547: getstatic     #866                // Field net/minecraftforge/fml/LogicalSide.SERVER:Lnet/minecraftforge/fml/LogicalSide;
+     550: invokespecial #971                // Method com/tacz/guns/api/event/common/EntityKillByGunEvent."<init>":(Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;FLorg/apache/commons/lang3/tuple/Pair;ZFLnet/minecraftforge/fml/LogicalSide;)V
+     553: invokeinterface #881,  2          // InterfaceMethod net/minecraftforge/eventbus/api/IEventBus.post:(Lnet/minecraftforge/eventbus/api/Event;)Z
+     558: pop
+     559: new           #973                // class com/tacz/guns/network/message/event/ServerMessageGunKill
+     562: dup
+     563: aload_0
+     564: invokevirtual #974                // Method m_19879_:()I
+     567: aload         15
+     569: invokevirtual #963                // Method net/minecraft/world/entity/LivingEntity.m_19879_:()I
+     572: iload         16
+     574: aload         14
+     576: aload_0
+     577: getfield      #504                // Field gunDisplayId:Lnet/minecraft/resources/ResourceLocation;
+     580: fload         9
+     582: iload         8
+     584: fload         10
+     586: invokespecial #977                // Method com/tacz/guns/network/message/event/ServerMessageGunKill."<init>":(IIILnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;FZF)V
+     589: aload         15
+     591: invokestatic  #983                // Method com/tacz/guns/network/NetworkHandler.sendToDimension:(Ljava/lang/Object;Lnet/minecraft/world/entity/Entity;)V
+     594: goto          670
+     597: getstatic     #875                // Field net/minecraftforge/common/MinecraftForge.EVENT_BUS:Lnet/minecraftforge/eventbus/api/IEventBus;
+     600: new           #46                 // class com/tacz/guns/api/event/common/EntityHurtByGunEvent$Post
+     603: dup
+     604: aload_0
+     605: aload         15
+     607: aload         6
+     609: aload         14
+     611: aload_0
+     612: getfield      #504                // Field gunDisplayId:Lnet/minecraft/resources/ResourceLocation;
+     615: fload         9
+     617: aload         7
+     619: iload         8
+     621: fload         10
+     623: getstatic     #866                // Field net/minecraftforge/fml/LogicalSide.SERVER:Lnet/minecraftforge/fml/LogicalSide;
+     626: invokespecial #984                // Method com/tacz/guns/api/event/common/EntityHurtByGunEvent$Post."<init>":(Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;FLorg/apache/commons/lang3/tuple/Pair;ZFLnet/minecraftforge/fml/LogicalSide;)V
+     629: invokeinterface #881,  2          // InterfaceMethod net/minecraftforge/eventbus/api/IEventBus.post:(Lnet/minecraftforge/eventbus/api/Event;)Z
+     634: pop
+     635: new           #986                // class com/tacz/guns/network/message/event/ServerMessageGunHurt
+     638: dup
+     639: aload_0
+     640: invokevirtual #974                // Method m_19879_:()I
+     643: aload         15
+     645: invokevirtual #963                // Method net/minecraft/world/entity/LivingEntity.m_19879_:()I
+     648: iload         16
+     650: aload         14
+     652: aload_0
+     653: getfield      #504                // Field gunDisplayId:Lnet/minecraft/resources/ResourceLocation;
+     656: fload         9
+     658: iload         8
+     660: fload         10
+     662: invokespecial #987                // Method com/tacz/guns/network/message/event/ServerMessageGunHurt."<init>":(IIILnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;FZF)V
+     665: aload         15
+     667: invokestatic  #983                // Method com/tacz/guns/network/NetworkHandler.sendToDimension:(Ljava/lang/Object;Lnet/minecraft/world/entity/Entity;)V
+     670: return
+
+protected void onHitBlock(net.minecraft.world.phys.BlockHitResult, net.minecraft.world.phys.Vec3, net.minecraft.world.phys.Vec3);
+    Code:
+       0: aload_1
+       1: invokevirtual #697                // Method net/minecraft/world/phys/BlockHitResult.m_6662_:()Lnet/minecraft/world/phys/HitResult$Type;
+       4: getstatic     #701                // Field net/minecraft/world/phys/HitResult$Type.MISS:Lnet/minecraft/world/phys/HitResult$Type;
+       7: if_acmpne     11
+      10: return
+      11: aload_1
+      12: invokevirtual #1017               // Method net/minecraft/world/phys/BlockHitResult.m_82425_:()Lnet/minecraft/core/BlockPos;
+      15: astore        4
+      17: aload_1
+      18: invokevirtual #704                // Method net/minecraft/world/phys/BlockHitResult.m_82450_:()Lnet/minecraft/world/phys/Vec3;
+      21: astore        5
+      23: getstatic     #875                // Field net/minecraftforge/common/MinecraftForge.EVENT_BUS:Lnet/minecraftforge/eventbus/api/IEventBus;
+      26: new           #1019               // class com/tacz/guns/api/event/server/AmmoHitBlockEvent
+      29: dup
+      30: aload_0
+      31: invokevirtual #535                // Method m_9236_:()Lnet/minecraft/world/level/Level;
+      34: aload_1
+      35: aload_0
+      36: invokevirtual #535                // Method m_9236_:()Lnet/minecraft/world/level/Level;
+      39: aload         4
+      41: invokevirtual #1023               // Method net/minecraft/world/level/Level.m_8055_:(Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/block/state/BlockState;
+      44: aload_0
+      45: invokespecial #1026               // Method com/tacz/guns/api/event/server/AmmoHitBlockEvent."<init>":(Lnet/minecraft/world/level/Level;Lnet/minecraft/world/phys/BlockHitResult;Lnet/minecraft/world/level/block/state/BlockState;Lcom/tacz/guns/entity/EntityKineticBullet;)V
+      48: invokeinterface #881,  2          // InterfaceMethod net/minecraftforge/eventbus/api/IEventBus.post:(Lnet/minecraftforge/eventbus/api/Event;)Z
+      53: ifeq          57
+      56: return
+      57: aload_0
+      58: aload_1
+      59: invokespecial #1032               // Method net/minecraft/world/entity/projectile/Projectile.m_8060_:(Lnet/minecraft/world/phys/BlockHitResult;)V
+      62: aload_0
+      63: getfield      #165                // Field explosion:Z
+      66: ifeq          100
+      69: aload_0
+      70: invokevirtual #664                // Method m_19749_:()Lnet/minecraft/world/entity/Entity;
+      73: aload_0
+      74: aload_0
+      75: getfield      #174                // Field explosionDamage:F
+      78: aload_0
+      79: getfield      #176                // Field explosionRadius:F
+      82: aload_0
+      83: getfield      #181                // Field explosionKnockback:Z
+      86: aload_0
+      87: getfield      #183                // Field explosionDestroyBlock:Z
+      90: aload         5
+      92: invokestatic  #670                // Method com/tacz/guns/util/ExplodeUtil.createExplosion:(Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/entity/Entity;FFZZLnet/minecraft/world/phys/Vec3;)V
+      95: aload_0
+      96: invokevirtual #651                // Method m_146870_:()V
+      99: return
+     100: aload_0
+     101: invokevirtual #535                // Method m_9236_:()Lnet/minecraft/world/level/Level;
+     104: astore        7
+     106: aload         7
+     108: instanceof    #927                // class net/minecraft/server/level/ServerLevel
+     111: ifeq          223
+     114: aload         7
+     116: checkcast     #927                // class net/minecraft/server/level/ServerLevel
+     119: astore        6
+     121: new           #1034               // class com/tacz/guns/particles/BulletHoleOption
+     124: dup
+     125: aload_1
+     126: invokevirtual #1038               // Method net/minecraft/world/phys/BlockHitResult.m_82434_:()Lnet/minecraft/core/Direction;
+     129: aload_1
+     130: invokevirtual #1017               // Method net/minecraft/world/phys/BlockHitResult.m_82425_:()Lnet/minecraft/core/BlockPos;
+     133: aload_0
+     134: getfield      #142                // Field ammoId:Lnet/minecraft/resources/ResourceLocation;
+     137: invokevirtual #1042               // Method net/minecraft/resources/ResourceLocation.toString:()Ljava/lang/String;
+     140: aload_0
+     141: getfield      #247                // Field gunId:Lnet/minecraft/resources/ResourceLocation;
+     144: invokevirtual #1042               // Method net/minecraft/resources/ResourceLocation.toString:()Ljava/lang/String;
+     147: aload_0
+     148: getfield      #504                // Field gunDisplayId:Lnet/minecraft/resources/ResourceLocation;
+     151: invokevirtual #1042               // Method net/minecraft/resources/ResourceLocation.toString:()Ljava/lang/String;
+     154: invokespecial #1045               // Method com/tacz/guns/particles/BulletHoleOption."<init>":(Lnet/minecraft/core/Direction;Lnet/minecraft/core/BlockPos;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+     157: astore        7
+     159: aload         6
+     161: aload         7
+     163: aload         5
+     165: getfield      #575                // Field net/minecraft/world/phys/Vec3.f_82479_:D
+     168: aload         5
+     170: getfield      #578                // Field net/minecraft/world/phys/Vec3.f_82480_:D
+     173: aload         5
+     175: getfield      #581                // Field net/minecraft/world/phys/Vec3.f_82481_:D
+     178: iconst_1
+     179: dconst_0
+     180: dconst_0
+     181: dconst_0
+     182: dconst_0
+     183: invokevirtual #938                // Method net/minecraft/server/level/ServerLevel.m_8767_:(Lnet/minecraft/core/particles/ParticleOptions;DDDIDDDD)I
+     186: pop
+     187: aload_0
+     188: getfield      #169                // Field igniteBlock:Z
+     191: ifeq          223
+     194: aload         6
+     196: getstatic     #930                // Field net/minecraft/core/particles/ParticleTypes.f_123756_:Lnet/minecraft/core/particles/SimpleParticleType;
+     199: aload         5
+     201: getfield      #575                // Field net/minecraft/world/phys/Vec3.f_82479_:D
+     204: aload         5
+     206: getfield      #578                // Field net/minecraft/world/phys/Vec3.f_82480_:D
+     209: aload         5
+     211: getfield      #581                // Field net/minecraft/world/phys/Vec3.f_82481_:D
+     214: iconst_1
+     215: dconst_0
+     216: dconst_0
+     217: dconst_0
+     218: dconst_0
+     219: invokevirtual #938                // Method net/minecraft/server/level/ServerLevel.m_8767_:(Lnet/minecraft/core/particles/ParticleOptions;DDDIDDDD)I
+     222: pop
+     223: aload_0
+     224: getfield      #169                // Field igniteBlock:Z
+     227: ifeq          363
+     230: getstatic     #1048               // Field com/tacz/guns/config/common/AmmoConfig.IGNITE_BLOCK:Lnet/minecraftforge/common/ForgeConfigSpec$BooleanValue;
+     233: invokevirtual #472                // Method net/minecraftforge/common/ForgeConfigSpec$BooleanValue.get:()Ljava/lang/Object;
+     236: checkcast     #349                // class java/lang/Boolean
+     239: invokevirtual #375                // Method java/lang/Boolean.booleanValue:()Z
+     242: ifeq          363
+     245: aload         4
+     247: aload_1
+     248: invokevirtual #1038               // Method net/minecraft/world/phys/BlockHitResult.m_82434_:()Lnet/minecraft/core/Direction;
+     251: invokevirtual #1052               // Method net/minecraft/core/BlockPos.m_121945_:(Lnet/minecraft/core/Direction;)Lnet/minecraft/core/BlockPos;
+     254: astore        6
+     256: aload_0
+     257: invokevirtual #535                // Method m_9236_:()Lnet/minecraft/world/level/Level;
+     260: aload         6
+     262: aload_1
+     263: invokevirtual #1038               // Method net/minecraft/world/phys/BlockHitResult.m_82434_:()Lnet/minecraft/core/Direction;
+     266: invokestatic  #1058               // Method net/minecraft/world/level/block/BaseFireBlock.m_49255_:(Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/core/Direction;)Z
+     269: ifeq          363
+     272: aload_0
+     273: invokevirtual #535                // Method m_9236_:()Lnet/minecraft/world/level/Level;
+     276: aload         6
+     278: invokestatic  #1062               // Method net/minecraft/world/level/block/BaseFireBlock.m_49245_:(Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/block/state/BlockState;
+     281: astore        7
+     283: aload_0
+     284: invokevirtual #535                // Method m_9236_:()Lnet/minecraft/world/level/Level;
+     287: aload         6
+     289: aload         7
+     291: bipush        11
+     293: invokevirtual #1066               // Method net/minecraft/world/level/Level.m_7731_:(Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;I)Z
+     296: pop
+     297: aload_0
+     298: invokevirtual #535                // Method m_9236_:()Lnet/minecraft/world/level/Level;
+     301: checkcast     #927                // class net/minecraft/server/level/ServerLevel
+     304: getstatic     #930                // Field net/minecraft/core/particles/ParticleTypes.f_123756_:Lnet/minecraft/core/particles/SimpleParticleType;
+     307: aload         5
+     309: getfield      #575                // Field net/minecraft/world/phys/Vec3.f_82479_:D
+     312: dconst_1
+     313: dsub
+     314: aload_0
+     315: getfield      #1070               // Field f_19796_:Lnet/minecraft/util/RandomSource;
+     318: invokeinterface #1075,  1         // InterfaceMethod net/minecraft/util/RandomSource.m_188500_:()D
+     323: ldc2_w        #481                // double 2.0d
+     326: dmul
+     327: dadd
+     328: aload         5
+     330: getfield      #578                // Field net/minecraft/world/phys/Vec3.f_82480_:D
+     333: aload         5
+     335: getfield      #581                // Field net/minecraft/world/phys/Vec3.f_82481_:D
+     338: dconst_1
+     339: dsub
+     340: aload_0
+     341: getfield      #1070               // Field f_19796_:Lnet/minecraft/util/RandomSource;
+     344: invokeinterface #1075,  1         // InterfaceMethod net/minecraft/util/RandomSource.m_188500_:()D
+     349: ldc2_w        #481                // double 2.0d
+     352: dmul
+     353: dadd
+     354: iconst_4
+     355: dconst_0
+     356: dconst_0
+     357: dconst_0
+     358: dconst_0
+     359: invokevirtual #938                // Method net/minecraft/server/level/ServerLevel.m_8767_:(Lnet/minecraft/core/particles/ParticleOptions;DDDIDDDD)I
+     362: pop
+     363: aload_0
+     364: invokevirtual #651                // Method m_146870_:()V
+     367: return
+
+  public float getDamage(net.minecraft.world.phys.Vec3);
+    Code:
+       0: fconst_0
+       1: fstore_2
+       2: aload_1
+       3: aload_0
+       4: getfield      #500                // Field startPos:Lnet/minecraft/world/phys/Vec3;
+       7: invokevirtual #738                // Method net/minecraft/world/phys/Vec3.m_82554_:(Lnet/minecraft/world/phys/Vec3;)D
+      10: dstore_3
+      11: aload_0
+      12: getfield      #159                // Field damageAmount:Ljava/util/LinkedList;
+      15: invokevirtual #1086               // Method java/util/LinkedList.iterator:()Ljava/util/Iterator;
+      18: astore        5
+      20: aload         5
+      22: invokeinterface #1091,  1         // InterfaceMethod java/util/Iterator.hasNext:()Z
+      27: ifeq          112
+      30: aload         5
+      32: invokeinterface #1094,  1         // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+      37: checkcast     #49                 // class com/tacz/guns/resource/pojo/data/gun/ExtraDamage$DistanceDamagePair
+      40: astore        6
+      42: aload_0
+      43: getfield      #159
